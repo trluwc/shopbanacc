@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AccVault — Shop bán tài khoản Premium uy tín. ChatGPT Plus, Capcut Pro, Spotify, Netflix, YouTube Premium, Canva Pro. Bảo hành trọn đời.">
+    <title>AccVault — Shop Tài Khoản Premium</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+
+<body>
+
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <div class="logo-icon">⚡</div>
+            <span class="logo-text">AccVault</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <!-- Main Nav -->
+            <a href="#" class="active" data-page="home" onclick="switchPage('home', this)">
+                <span class="nav-icon">🏠</span> Trang Chủ
+            </a>
+            <button data-page="accounts" onclick="switchPage('accounts', this)">
+                <span class="nav-icon">👤</span> Tài Khoản
+                <span class="nav-badge">16</span>
+            </button>
+            <a href="#" data-page="contact" onclick="switchPage('contact', this)">
+                <span class="nav-icon">💬</span> Liên Hệ Mua Hàng
+            </a>
+            <a href="#" data-page="history" onclick="switchPage('history', this)">
+                <span class="nav-icon">📋</span> Lịch Sử Đơn Hàng
+            </a>
+            <a href="#" data-page="support" onclick="switchPage('contact', this)">
+                <span class="nav-icon">🎧</span> Liên Hệ Hỗ Trợ
+            </a>
+
+            <!-- Premium Accounts -->
+            <div class="sidebar-section-title">Tài khoản Premium</div>
+            <a href="#" onclick="scrollToProduct('chatgpt-plus')">
+                <span class="nav-icon">🤖</span> ChatGPT Plus
+            </a>
+            <a href="#" onclick="scrollToProduct('capcut-pro')">
+                <span class="nav-icon">🎬</span> Capcut Pro
+            </a>
+            <a href="#" onclick="scrollToProduct('canva')">
+                <span class="nav-icon">🎨</span> Canva Pro
+            </a>
+            <a href="#" onclick="scrollToProduct('youtube')">
+                <span class="nav-icon">▶️</span> Youtube Premium
+            </a>
+            <a href="#" onclick="scrollToProduct('spotify')">
+                <span class="nav-icon">🎵</span> Spotify Premium
+            </a>
+            <a href="#" onclick="scrollToProduct('netflix')">
+                <span class="nav-icon">🎥</span> Netflix Premium
+            </a>
+            <button onclick="switchPage('accounts', document.querySelector('[data-page=accounts]'))">
+                <span class="nav-icon">📦</span> Xem Thêm Tài Khoản
+            </button>
+
+            <!-- Services -->
+            <div class="sidebar-section-title">Dịch vụ khác</div>
+            <a href="#" onclick="scrollToProduct('adobe')">
+                <span class="nav-icon">🖌️</span> Adobe Full Apps
+            </a>
+            <a href="#" onclick="scrollToProduct('ms365')">
+                <span class="nav-icon">📊</span> Microsoft Office 365
+            </a>
+            <a href="#" onclick="scrollToProduct('cursor')">
+                <span class="nav-icon">💻</span> Cursor Pro AI
+            </a>
+            <a href="#" onclick="scrollToProduct('zoom')">
+                <span class="nav-icon">📹</span> Zoom Pro
+            </a>
+        </nav>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
+                <div class="header-search">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput"
+                        oninput="filterProducts(this.value)">
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="header-icon-btn" onclick="toggleCart()">
+                    🛒
+                    <span class="header-cart-count" id="cartCount">0</span>
+                </button>
+                <button class="header-icon-btn">
+                    🔔
+                    <span class="badge-dot"></span>
+                </button>
+
+                <div class="user-profile" onclick="toggleUserDropdown()">
+                    <div class="user-avatar">KH</div>
+                    <div class="user-info">
+                        <div class="user-name">Khách Hàng</div>
+                        <div class="user-balance">Thành viên</div>
+                    </div>
+
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#" onclick="switchPage('home', document.querySelector('[data-page=home]'))">
+                            <span>🏠</span> Trang chủ
+                        </a>
+                        <a href="#" onclick="switchPage('contact', document.querySelector('[data-page=contact]'))">
+                            <span>💬</span> Liên hệ mua hàng
+                        </a>
+                        <a href="#" onclick="switchPage('history', document.querySelector('[data-page=history]'))">
+                            <span>📋</span> Đơn hàng đã mua
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" onclick="switchPage('contact', document.querySelector('[data-page=contact]'))">
+                            <span>🎧</span> Hỗ trợ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ========== HOME PAGE ========== -->
+        <div class="page-content" id="homePage">
+
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon purple">💜</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Sản phẩm</div>
+                        <div class="stat-value">16+</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue">💙</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Đơn đã bán</div>
+                        <div class="stat-value">15,230</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">💚</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Khách hài lòng</div>
+                        <div class="stat-value">99.8%</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">🧡</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Hỗ trợ</div>
+                        <div class="stat-value">24/7</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products: AI & Productivity -->
+            <div class="products-section" id="section-ai">
+                <div class="section-bar">
+                    <h2>🤖 Tài Khoản AI & Năng Suất</h2>
+                    <a href="#" class="view-all"
+                        onclick="switchPage('accounts', document.querySelector('[data-page=accounts]'))">Xem tất cả
+                        →</a>
+                </div>
+                <div class="products-grid" id="productsGrid-ai">
+
+                    <div class="product-card" data-id="chatgpt-plus" data-name="ChatGPT Plus (1 tháng)"
+                        data-price="70000" data-icon="🤖"
+                        data-desc="GPT-4o, GPT-4, DALL·E 3, Advanced Data Analysis. Tốc độ nhanh gấp 5 lần."
+                        data-features="GPT-4o & GPT-4|DALL·E 3 tạo ảnh|Code Interpreter|Tốc độ ưu tiên|1 tháng sử dụng"
+                        data-original="500000" onclick="openProductModal(this)">
+                        <span class="product-badge hot">HOT</span>
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🤖</div>
+                            <div class="product-text">
+                                <h3>ChatGPT Plus</h3>
+                                <span class="product-price">70,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="gemini-pro" data-name="Google Gemini Pro" data-price="108000"
+                        data-icon="💎"
+                        data-desc="Truy cập Gemini Ultra, Advanced AI. Tích hợp Google Workspace, tạo ảnh AI."
+                        data-features="Gemini Ultra model|Tạo ảnh AI|Google Workspace|2TB Google One|1 tháng"
+                        data-original="500000" onclick="openProductModal(this)">
+                        <span class="product-badge new">MỚI</span>
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">💎</div>
+                            <div class="product-text">
+                                <h3>Google Gemini Pro</h3>
+                                <span class="product-price">108,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="cursor" data-name="Cursor Pro AI (1 tháng)" data-price="350000"
+                        data-icon="💻"
+                        data-desc="IDE AI mạnh nhất. Autocomplete thông minh, chat AI, code generation tự động."
+                        data-features="AI Autocomplete|GPT-4 Chat|Code Generation|Multi-file editing|1 tháng"
+                        data-original="500000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">💻</div>
+                            <div class="product-text">
+                                <h3>Cursor Pro AI</h3>
+                                <span class="product-price">350,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="ms365" data-name="Microsoft Office 365 (1 năm)"
+                        data-price="96000" data-icon="📊"
+                        data-desc="Word, Excel, PowerPoint, Outlook. OneDrive 1TB cloud storage. Bản quyền chính hãng."
+                        data-features="Office Full bộ|OneDrive 1TB|5 thiết bị|Luôn cập nhật|1 năm"
+                        data-original="400000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">📊</div>
+                            <div class="product-text">
+                                <h3>Microsoft Office 365</h3>
+                                <span class="product-price">96,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Products: Entertainment -->
+            <div class="products-section" id="section-entertainment">
+                <div class="section-bar">
+                    <h2>🎬 Giải Trí & Media</h2>
+                </div>
+                <div class="products-grid" id="productsGrid-entertainment">
+
+                    <div class="product-card" data-id="capcut-pro" data-name="Capcut Pro (1 năm)" data-price="35000"
+                        data-icon="🎬"
+                        data-desc="Mở khóa tất cả hiệu ứng, font chữ, nhạc bản quyền. Xuất video 4K không watermark."
+                        data-features="Tất cả hiệu ứng|Export 4K|Không watermark|Font & nhạc Pro|1 năm"
+                        data-original="250000" onclick="openProductModal(this)">
+                        <span class="product-badge hot">HOT</span>
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🎬</div>
+                            <div class="product-text">
+                                <h3>Capcut Pro</h3>
+                                <span class="product-price">35,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="youtube" data-name="Youtube Premium (3 tháng)" data-price="30000"
+                        data-icon="▶️"
+                        data-desc="Xem video không quảng cáo, phát nền, tải offline. YouTube Music Premium đi kèm."
+                        data-features="Không quảng cáo|Phát nền|Tải offline|YT Music Premium|3 tháng"
+                        data-original="180000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">▶️</div>
+                            <div class="product-text">
+                                <h3>Youtube Premium</h3>
+                                <span class="product-price">30,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="netflix" data-name="Netflix Ultra 4K (1 tháng)"
+                        data-price="75000" data-icon="🎥"
+                        data-desc="Xem phim 4K Ultra HD, 4 thiết bị cùng lúc. Kho phim khổng lồ toàn cầu."
+                        data-features="4K Ultra HD|4 thiết bị|Kho phim lớn nhất|Download offline|1 tháng"
+                        data-original="260000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🎥</div>
+                            <div class="product-text">
+                                <h3>Netflix Ultra 4K</h3>
+                                <span class="product-price">75,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="spotify" data-name="Spotify Premium (6 tháng)" data-price="35000"
+                        data-icon="🎵"
+                        data-desc="Nghe nhạc không quảng cáo, download offline, chất lượng lossless cao cấp."
+                        data-features="Không quảng cáo|Download offline|Chất lượng Lossless|Lyrics real-time|6 tháng"
+                        data-original="180000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🎵</div>
+                            <div class="product-text">
+                                <h3>Spotify Premium</h3>
+                                <span class="product-price">35,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Products: Design & Creative -->
+            <div class="products-section" id="section-design">
+                <div class="section-bar">
+                    <h2>🎨 Thiết Kế & Sáng Tạo</h2>
+                </div>
+                <div class="products-grid" id="productsGrid-design">
+
+                    <div class="product-card" data-id="canva" data-name="Canva Pro (1 năm)" data-price="14940"
+                        data-icon="🎨"
+                        data-desc="100+ triệu template, ảnh stock, font Premium. Xóa nền AI, magic resize."
+                        data-features="100M+ templates|Xóa nền AI|Ảnh stock Premium|Magic Resize|1 năm"
+                        data-original="300000" onclick="openProductModal(this)">
+                        <span class="product-badge sale">GIÁ TỐT</span>
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🎨</div>
+                            <div class="product-text">
+                                <h3>Canva Pro</h3>
+                                <span class="product-price">14,940đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="adobe" data-name="Adobe Full Apps (1 năm)" data-price="90000"
+                        data-icon="🖌️"
+                        data-desc="Photoshop, Illustrator, Premiere Pro, After Effects và 20+ ứng dụng Adobe."
+                        data-features="Photoshop|Illustrator|Premiere Pro|After Effects|1 năm" data-original="1200000"
+                        onclick="openProductModal(this)">
+                        <span class="product-badge best">BEST</span>
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🖌️</div>
+                            <div class="product-text">
+                                <h3>Adobe Full Apps</h3>
+                                <span class="product-price">90,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="figma" data-name="Figma Pro (1 năm)" data-price="120000"
+                        data-icon="🎯"
+                        data-desc="Thiết kế UI/UX chuyên nghiệp. Unlimited projects, Dev Mode, advanced prototype."
+                        data-features="Unlimited projects|Dev Mode|Advanced prototype|Team libraries|1 năm"
+                        data-original="500000" onclick="openProductModal(this)">
+                        <span class="product-badge new">MỚI</span>
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🎯</div>
+                            <div class="product-text">
+                                <h3>Figma Pro</h3>
+                                <span class="product-price">120,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="tradingview" data-name="TradingView Premium (1 năm)"
+                        data-price="100000" data-icon="📈"
+                        data-desc="Biểu đồ chuyên nghiệp, 8 chart/tab, 25 indicators, server-side alerts."
+                        data-features="8 charts/tab|25 indicators|Server-side alerts|No ads|1 năm"
+                        data-original="400000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">📈</div>
+                            <div class="product-text">
+                                <h3>TradingView</h3>
+                                <span class="product-price">100,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Products: Utilities -->
+            <div class="products-section" id="section-utility">
+                <div class="section-bar">
+                    <h2>🔧 Tiện Ích & Bảo Mật</h2>
+                </div>
+                <div class="products-grid" id="productsGrid-utility">
+
+                    <div class="product-card" data-id="zoom" data-name="Zoom Pro (1 năm)" data-price="100000"
+                        data-icon="📹"
+                        data-desc="Họp online không giới hạn thời gian, 100 người tham gia, recording cloud."
+                        data-features="Unlimited meeting|100 participants|Cloud recording|Breakout rooms|1 năm"
+                        data-original="350000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">📹</div>
+                            <div class="product-text">
+                                <h3>Zoom Pro</h3>
+                                <span class="product-price">100,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="nordvpn" data-name="NordVPN (1 năm)" data-price="60000"
+                        data-icon="🔒"
+                        data-desc="VPN nhanh nhất, 5500+ servers, 60 quốc gia. Bảo mật tuyệt đối, no logs."
+                        data-features="5500+ servers|60 quốc gia|No logs|Kill switch|1 năm" data-original="300000"
+                        onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">🔒</div>
+                            <div class="product-text">
+                                <h3>NordVPN</h3>
+                                <span class="product-price">60,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="grammarly" data-name="Grammarly Premium (1 năm)"
+                        data-price="80000" data-icon="📝"
+                        data-desc="Kiểm tra ngữ pháp AI, tone detector, plagiarism checker, style suggestions."
+                        data-features="AI grammar check|Plagiarism checker|Tone detector|Style suggestions|1 năm"
+                        data-original="350000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">📝</div>
+                            <div class="product-text">
+                                <h3>Grammarly Premium</h3>
+                                <span class="product-price">80,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-id="notion" data-name="Notion Plus (1 năm)" data-price="50000"
+                        data-icon="📓" data-desc="Unlimited blocks, unlimited file uploads, 30-day version history."
+                        data-features="Unlimited blocks|Unlimited uploads|30-day history|Guests access|1 năm"
+                        data-original="200000" onclick="openProductModal(this)">
+                        <div class="product-card-inner">
+                            <div class="product-icon-wrap">📓</div>
+                            <div class="product-text">
+                                <h3>Notion Plus</h3>
+                                <span class="product-price">50,000đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Announcements -->
+            <div class="announcements-section">
+                <div class="section-bar">
+                    <h2>📢 Thông Báo Từ Shop</h2>
+                </div>
+                <div class="announce-card">
+                    <div class="announce-item">
+                        <div class="announce-avatar">QTV</div>
+                        <div class="announce-content">
+                            <div class="announce-header">
+                                <span class="announce-name">Quản Trị Viên</span>
+                                <span class="announce-verified">✅</span>
+                                <span class="announce-date">2026-02-28 16:00</span>
+                            </div>
+                            <div class="announce-text">
+                                🎉 <strong>FLASH SALE THÁNG 3!</strong> Giảm giá cực sốc tất cả tài khoản Premium.
+                                ChatGPT Plus chỉ từ 70K, Capcut Pro chỉ 35K. Nhanh tay liên hệ shop để được giá tốt
+                                nhất!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="announce-item">
+                        <div class="announce-avatar">QTV</div>
+                        <div class="announce-content">
+                            <div class="announce-header">
+                                <span class="announce-name">Quản Trị Viên</span>
+                                <span class="announce-verified">✅</span>
+                                <span class="announce-date">2026-02-25 10:30</span>
+                            </div>
+                            <div class="announce-text">
+                                📌 Để đảm bảo trải nghiệm tốt nhất, mọi giao dịch mua hàng vui lòng <strong>liên hệ trực
+                                    tiếp</strong> qua Zalo/Facebook/Telegram. Shop sẽ giao tài khoản ngay sau khi thanh
+                                toán. Bảo hành trọn đời!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="announce-item">
+                        <div class="announce-avatar">QTV</div>
+                        <div class="announce-content">
+                            <div class="announce-header">
+                                <span class="announce-name">Quản Trị Viên</span>
+                                <span class="announce-verified">✅</span>
+                                <span class="announce-date">2026-02-20 14:15</span>
+                            </div>
+                            <div class="announce-text">
+                                🔥 Mới bổ sung thêm nhiều sản phẩm: Cursor Pro AI, Figma Pro, Grammarly Premium, Notion
+                                Plus. Các kênh hỗ trợ luôn online 24/7, mọng quý khách hàng thông cảm!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========== CONTACT PAGE ========== -->
+        <div class="page-content contact-page" id="contactPage">
+            <div class="section-bar">
+                <h2>💬 Liên Hệ Mua Hàng & Hỗ Trợ</h2>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-method-card">
+                    <div class="contact-method-icon"
+                        style="background: linear-gradient(135deg, #0068FF, #0099FF); color: white;">💬</div>
+                    <h3>Zalo</h3>
+                    <p>Chat trực tiếp, phản hồi nhanh nhất</p>
+                    <span class="contact-link">0123.456.789 →</span>
+                </div>
+                <div class="contact-method-card">
+                    <div class="contact-method-icon"
+                        style="background: linear-gradient(135deg, #1877F2, #42A5F5); color: white;">📘</div>
+                    <h3>Facebook</h3>
+                    <p>Nhắn tin qua Messenger</p>
+                    <span class="contact-link">fb.com/accvault.shop →</span>
+                </div>
+                <div class="contact-method-card">
+                    <div class="contact-method-icon"
+                        style="background: linear-gradient(135deg, #0088cc, #29B6F6); color: white;">✈️</div>
+                    <h3>Telegram</h3>
+                    <p>Hỗ trợ quốc tế 24/7</p>
+                    <span class="contact-link">@accvault_shop →</span>
+                </div>
+            </div>
+
+            <div class="announce-card">
+                <div class="announce-item">
+                    <div class="announce-avatar" style="background: var(--gradient-green);">📌</div>
+                    <div class="announce-content">
+                        <div class="announce-header">
+                            <span class="announce-name">Hướng dẫn mua hàng</span>
+                        </div>
+                        <div class="announce-text">
+                            <strong>Bước 1:</strong> Chọn sản phẩm muốn mua trên trang chủ<br>
+                            <strong>Bước 2:</strong> Liên hệ shop qua Zalo/Facebook/Telegram<br>
+                            <strong>Bước 3:</strong> Chuyển khoản theo hướng dẫn<br>
+                            <strong>Bước 4:</strong> Nhận tài khoản ngay sau khi thanh toán<br><br>
+                            ✅ Bảo hành trọn đời — Lỗi đổi mới miễn phí<br>
+                            ⚡ Giao hàng tức thì — Nhận tài khoản trong 5 phút
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== HISTORY PAGE ========== -->
+        <div class="page-content history-page" id="historyPage">
+            <div class="section-bar">
+                <h2>📋 Lịch Sử Đơn Hàng</h2>
+            </div>
+
+            <div id="historyContent">
+                <div class="history-empty">
+                    <div class="empty-icon">📋</div>
+                    <p>Chưa có đơn hàng nào</p>
+                    <p style="font-size: 0.78rem; margin-top: 6px;">Liên hệ shop để mua tài khoản premium đầu tiên!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            © 2026 AccVault. All rights reserved. — Shop Tài Khoản Premium uy tín #1 Việt Nam
+        </footer>
+
+    </div>
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>🛒 Giỏ hàng</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <div class="empty-icon">🛒</div>
+                <p>Giỏ hàng trống</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Tổng cộng:</span>
+                <span id="cartTotal">0đ</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">💬 Liên hệ mua hàng</button>
+        </div>
+    </div>
+
+    <!-- ========== PRODUCT MODAL ========== -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Chi tiết sản phẩm</h2>
+                <button class="modal-close" onclick="closeProductModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FLOATING CONTACT ========== -->
+    <button class="floating-contact-btn" onclick="switchPage('contact', document.querySelector('[data-page=contact]'))">
+        💬 <span class="contact-text">Liên hệ chúng tôi</span>
+    </button>
+
+    <!-- ========== TOAST ========== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
