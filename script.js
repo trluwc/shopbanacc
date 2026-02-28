@@ -1,5 +1,5 @@
 // =========================================
-// AccShop — Script
+// sieuthinick.store — Script
 // =========================================
 
 // ─── DEFAULT PRODUCT DATA ───
@@ -514,8 +514,20 @@ function copyOrder(id) {
 }
 
 function goContact() {
-    toast('💬 Liên hệ shop qua Zalo: 0123.456.789 hoặc Telegram: @accshop_vn', 'warn');
+    toast('💬 Liên hệ shop qua Zalo: 0868192500 hoặc sieuthinick.store', 'warn');
     closeDetail();
+}
+
+// ─── TERMS PAGE ───
+function showTerms() {
+    document.getElementById('termsPage').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    document.getElementById('termsPage').scrollTop = 0;
+}
+
+function closeTerms() {
+    document.getElementById('termsPage').style.display = 'none';
+    document.body.style.overflow = '';
 }
 
 // ─── SEARCH ───

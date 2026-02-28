@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Shop bán tài khoản premium giá rẻ, uy tín. ChatGPT Plus, Capcut Pro, Canva, Netflix, Spotify và hơn 20 dịch vụ khác.">
-    <title>AccShop — Tài Khoản & Dịch Vụ Giá Rẻ</title>
+        content="SieuThiNick.Store — Shop bán tài khoản premium giá rẻ, uy tín. ChatGPT Plus, Capcut Pro, Canva, Netflix, Spotify và hơn 20 dịch vụ khác.">
+    <title>sieuthinick.store — Tài Khoản & Dịch Vụ Giá Rẻ</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
@@ -18,13 +18,12 @@
     <header class="header">
         <div class="header-logo" id="siteLogo" title="Double-click để vào admin">
             <span class="logo-gem">💎</span>
-            <span>AccShop</span>
+            <span>sieuthinick.store</span>
             <span class="logo-badge">Shop</span>
         </div>
 
         <nav class="header-nav">
-            <a href="#">Điều khoản & Dịch vụ</a>
-            <a href="#">🛡️ Giải mã 2FA</a>
+            <a href="#" onclick="showTerms(); return false;">Điều khoản & Dịch vụ</a>
         </nav>
 
         <div class="header-spacer"></div>
@@ -40,10 +39,12 @@
     <!-- TICKER -->
     <div class="ticker-wrap">
         <div class="ticker" id="ticker">
-            <span>Chào mừng bạn đến với <b>AccShop</b> — Nơi cung cấp các dịch vụ & tài khoản Premium uy tín, chất lượng
+            <span>Chào mừng bạn đến với <b>SieuThiNick.Store</b> — Nơi cung cấp các dịch vụ & tài khoản Premium uy tín,
+                chất lượng
                 nhất! +++ <b>Bảo hành trọn đời</b> +++ Hỗ trợ 24/7 qua Zalo & Telegram +++ Flash sale mỗi tuần, giảm đến
                 50% +++</span>
-            <span>Chào mừng bạn đến với <b>AccShop</b> — Nơi cung cấp các dịch vụ & tài khoản Premium uy tín, chất lượng
+            <span>Chào mừng bạn đến với <b>SieuThiNick.Store</b> — Nơi cung cấp các dịch vụ & tài khoản Premium uy tín,
+                chất lượng
                 nhất! +++ <b>Bảo hành trọn đời</b> +++ Hỗ trợ 24/7 qua Zalo & Telegram +++ Flash sale mỗi tuần, giảm đến
                 50% +++</span>
         </div>
@@ -53,7 +54,7 @@
     <div class="banner" id="banner">
         <div class="banner-content">
             <div class="banner-sub">💎 Uy tín từ 2022 · 10,000+ khách hàng</div>
-            <div class="banner-title" id="bannerTitle">TÀI KHOẢN & DỊCH VỤ GIÁ RẺ</div>
+            <div class="banner-title" id="bannerTitle">sieuthinick.store</div>
         </div>
     </div>
 
@@ -100,6 +101,60 @@
 
     <!-- TOAST -->
     <div class="toast-wrap" id="toastWrap"></div>
+
+    <!-- TERMS PAGE -->
+    <div id="termsPage"
+        style="display:none; position:fixed; inset:0; background:var(--bg); z-index:350; overflow-y:auto; padding-top:var(--header-h);">
+        <div class="terms-wrap">
+            <button class="terms-back" onclick="closeTerms()">← Quay lại trang chủ</button>
+            <div class="terms-box">
+                <h1 class="terms-h1">ĐIỀU KHOẢN & DỊCH VỤ<br><span>SIEUTHINICK SHOP</span></h1>
+
+                <h2 class="terms-h2">1. Giới thiệu</h2>
+                <p class="terms-p">Chào mừng Quý khách đến với <strong>SIEUTHINICK SHOP</strong>.<br>
+                    Khi sử dụng sản phẩm hoặc dịch vụ của chúng tôi, Quý khách mặc nhiên đồng ý với các điều khoản và
+                    điều kiện được quy định dưới đây.</p>
+
+                <h2 class="terms-h2">2. Chính sách bảo hành</h2>
+                <p class="terms-p"><strong>Thời gian bảo hành:</strong><br>
+                    Bảo hành Full thời gian sử dụng đối với các gói Premium (trừ trường hợp có ghi chú khác tại thời
+                    điểm mua).</p>
+                <p class="terms-p"><strong>Điều kiện được bảo hành:</strong></p>
+                <ul class="terms-list">
+                    <li>Tài khoản bị lỗi tính năng</li>
+                    <li>Mất trạng thái Premium</li>
+                    <li>Sai mật khẩu (áp dụng cho tài khoản dùng chung)</li>
+                </ul>
+                <p class="terms-p"><strong>Trường hợp từ chối bảo hành:</strong></p>
+                <ul class="terms-list warn">
+                    <li>Khách hàng tự ý thay đổi thông tin tài khoản (Email, Password, thông tin bảo mật)</li>
+                    <li>Sử dụng tài khoản vi phạm chính sách của nhà cung cấp dịch vụ</li>
+                    <li>Can thiệp trái phép làm ảnh hưởng đến tài khoản</li>
+                </ul>
+
+                <h2 class="terms-h2">3. Quy định sử dụng</h2>
+                <ul class="terms-list">
+                    <li>Không sử dụng tài khoản cho các mục đích vi phạm pháp luật Việt Nam.</li>
+                    <li>Không chia sẻ tài khoản cho nhiều người (ngoại trừ các gói Family hoặc Business).</li>
+                    <li>SIEUTHINICK SHOP có quyền tạm ngưng dịch vụ nếu phát hiện hành vi gian lận hoặc vi phạm điều
+                        khoản.</li>
+                </ul>
+
+                <h2 class="terms-h2">4. Chính sách hoàn tiền</h2>
+                <p class="terms-p">Hoàn tiền <strong>100%</strong> nếu chúng tôi không thể khắc phục lỗi tài khoản trong
+                    vòng 24 giờ kể từ thời điểm khách hàng báo lỗi hợp lệ.</p>
+
+                <h2 class="terms-h2">5. Liên hệ hỗ trợ</h2>
+                <p class="terms-p">Mọi thắc mắc hoặc yêu cầu hỗ trợ, vui lòng liên hệ:</p>
+                <ul class="terms-list">
+                    <li>Fanpage chính thức của SIEUTHINICK SHOP: <strong>sieuthinick.store</strong></li>
+                    <li>Hotline hỗ trợ khách hàng: <strong>0868192500</strong></li>
+                </ul>
+
+                <div class="terms-footer">Cập nhật lần cuối: 01/02/2026</div>
+            </div>
+        </div>
+    </div>
 
     <!-- File input (hidden) -->
     <input type="file" id="imgUpload" accept="image/*" style="display:none" onchange="handleImgUpload(this)">
