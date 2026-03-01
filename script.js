@@ -1,47 +1,77 @@
-// =========================================
+﻿// =========================================
 // sieuthinick.store — Script
 // =========================================
 
 // ─── DEFAULT PRODUCT DATA ───
 const DEFAULT_PRODUCTS = [
     {
-        id: 'cgpt-cap-san',
-        name: 'Chat GPT Plus Cấp Sẵn',
-        gradient: 'linear-gradient(135deg, #1a1a2e, #16213e)',
-        labelColor: '#10b981',
-        image: '',
+        id: 'antigravity',
+        name: 'Google Antigravity Pro',
+        gradient: 'linear-gradient(135deg, #0a1628, #172554)',
+        labelColor: '#93c5fd',
+        image: './images/img-antigravity.webp',
+        badge: 'BEST SELLER',
         paused: false,
         features: [
-            { text: 'Bảo hành toàn bộ thời gian sử dụng', type: 'good' },
-            { text: 'Dữ liệu chat & lịch sử riêng tư, không bị xóa', type: 'info' },
-            { text: 'GPT-4o, GPT-4, DALL·E 3, Code Interpreter', type: 'good' },
-            { text: 'Dùng chung tài khoản, tối đa 3 thiết bị', type: 'warn' },
+            { text: 'Tài Khoản Google Antigravity Pro + Ultra', type: 'good' },
+            { text: 'Tặng kèm Gemini Pro + 2TB Google Driver', type: 'good' },
+            { text: 'Nâng cấp chính chủ hoặc dùng tài khoản riêng', type: 'good' },
+            { text: 'Bảo hành toàn bộ thời gian sử dụng', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 69000, out: false },
-            { label: '3 Tháng', price: 195000, out: false },
-            { label: '6 Tháng', price: 370000, out: false },
-            { label: '12 Tháng', price: 690000, out: false },
+            { label: 'Nâng Cấp CC 1T (+Gemini+2TB)', price: 52650, out: true },
+            { label: 'Ultra Sẵn 1T (Bảo hành 14 ngày)', price: 289575, out: true },
+            { label: 'Nâng Cấp CC 6T (+Gemini+2TB)', price: 142155, out: false },
+            { label: 'Nâng Cấp CC 12T (+Gemini+2TB)', price: 221130, out: false },
+            { label: 'Chủ Nhóm 5 Slot 12T (+Gemini AI+2TB)', price: 631800, out: false },
         ]
     },
     {
-        id: 'cgpt-chinh-chu',
-        name: 'Chat GPT Plus Chính Chủ',
-        gradient: 'linear-gradient(135deg, #064e3b, #0f172a)',
-        labelColor: '#34d399',
-        image: '',
+        id: 'cgpt-plus',
+        name: 'ChatGPT Plus',
+        gradient: 'linear-gradient(135deg, #1a1a2e, #16213e)',
+        labelColor: '#10b981',
+        image: './images/img-chatgpt.jpg',
+        badge: 'BEST SELLER',
         paused: false,
         features: [
-            { text: 'Tài khoản chính chủ — email + mật khẩu riêng', type: 'good' },
-            { text: 'Toàn quyền sử dụng, không chia sẻ', type: 'good' },
-            { text: 'GPT-4o, DALL·E 3, Advanced Analysis', type: 'good' },
-            { text: 'Bảo hành đổi mới nếu lỗi', type: 'info' },
+            { text: 'Vô hạn ChatGPT 5.2 Instant, ChatGPT 5.2 Thinking, ChatGPT 5.2 Pro', type: 'good' },
+            { text: 'Bảo hành toàn bộ thời gian sử dụng', type: 'good' },
+            { text: 'Có 3 loại: Dùng Chung · Riêng Tư · Chính Chủ', type: 'info' },
+            { text: 'Chính chủ: toàn quyền, không chia sẻ, bảo hành đổi mới', type: 'good' },
         ],
         durations: [
-            { label: '1 Tháng', price: 99000, out: false },
-            { label: '3 Tháng', price: 280000, out: false },
-            { label: '6 Tháng', price: 529000, out: true },
-            { label: '12 Tháng', price: 950000, out: false },
+            { label: '1 Tháng', desc: 'ChatGPT Plus Dùng Chung — Chỉ đăng nhập được 1 thiết bị', price: 89100, out: false },
+            { label: '12 Tháng', desc: 'ChatGPT Plus Dùng Chung — Chỉ đăng nhập được 1 thiết bị', price: 481140, out: false },
+            { label: '1 Tháng', desc: 'ChatGPT Plus Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 151470, out: false },
+            { label: '1 Tháng', desc: 'ChatGPT Plus Nâng Cấp Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 178200, out: false },
+            { label: '2 Tháng', desc: 'ChatGPT Plus Nâng Cấp Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 302940, out: true },
+            { label: '3 Tháng', desc: 'ChatGPT Plus Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 454410, out: false },
+            { label: '3 Tháng', desc: 'ChatGPT Plus Nâng Cấp Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 507870, out: false },
+            { label: '12 Tháng', desc: 'ChatGPT Go Có Sẵn Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 534600, out: false },
+            { label: '12 Tháng', desc: 'ChatGPT Plus Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 1496880, out: false },
+            { label: '12 Tháng', desc: 'Nâng Cấp ChatGPT Plus Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 1603800, out: true },
+        ]
+    },
+    {
+        id: 'veo3',
+        name: 'Google VEO3 ULTRA',
+        gradient: 'linear-gradient(135deg, #172554, #1e1b4b)',
+        labelColor: '#93c5fd',
+        image: './images/img-veo3.webp',
+        badge: 'BEST SELLER',
+        paused: false,
+        features: [
+            { text: 'Tài khoản Google PRO AI 2TB (Veo3) — Cấp Sẵn 1000–45000 Credit Flow', type: 'good' },
+            { text: 'Veo3 Ultra không giới hạn + 45000 Credit tạo được 450 video Pro', type: 'good' },
+            { text: 'Nâng cấp chính chủ: tặng kèm Gemini Pro + 2TB + Google Antigravity', type: 'good' },
+            { text: 'Bảo hành 7–14 ngày cho gói cấp sẵn', type: 'info' },
+        ],
+        durations: [
+            { label: '1 Tháng', desc: 'Veo3 Ultra Không Giới Hạn + 45000 Credit Flow Labs (450 Video Pro) — Bảo hành 7 ngày', price: 247455, out: true },
+            { label: '1 Tháng', desc: 'Veo3 Ultra Không Giới Hạn + 45000 Credit Flow Labs (450 Video Pro) — Bảo hành 14 ngày', price: 315900, out: true },
+            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Credit/Tháng + Tặng kèm Gemini Pro + 2TB + Google Antigravity', price: 142155, out: false },
+            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Credit/Tháng + Tặng kèm Gemini Pro + 2TB + Google Antigravity', price: 221130, out: false },
         ]
     },
     {
@@ -49,7 +79,7 @@ const DEFAULT_PRODUCTS = [
         name: 'Gemini Pro Chính Chủ',
         gradient: 'linear-gradient(135deg, #1e3a5f, #0c2340)',
         labelColor: '#60a5fa',
-        image: '',
+        image: './images/img-gemini.jpg',
         paused: false,
         features: [
             { text: 'Gemini Ultra — model AI mạnh nhất của Google', type: 'good' },
@@ -58,10 +88,10 @@ const DEFAULT_PRODUCTS = [
             { text: 'Tài khoản chính chủ không chia sẻ', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 173000, out: false },
-            { label: '3 Tháng', price: 480000, out: false },
-            { label: '6 Tháng', price: 890000, out: false },
-            { label: '12 Tháng', price: 1600000, out: false },
+            { label: '6 Tháng', desc: 'Nâng Cấp Gemini Pro AI + Google One Drive 2TB + Google Antigravity Chính Chủ', price: 142155, out: false },
+            { label: '12 Tháng', desc: 'Nâng Cấp Gemini Pro AI + Google One Drive 2TB + Google Antigravity Chính Chủ', price: 221130, out: false },
+            { label: '12 Tháng', desc: 'Tài Khoản Chủ Nhóm + 5 Slot Gemini Pro AI + 2TB + Google Antigravity (6 Slot)', price: 631800, out: false },
+
         ]
     },
     {
@@ -69,19 +99,22 @@ const DEFAULT_PRODUCTS = [
         name: 'Capcut Pro',
         gradient: 'linear-gradient(135deg, #312e81, #1e1b4b)',
         labelColor: '#a78bfa',
-        image: '',
+        image: './images/img-capcut.webp',
         paused: false,
         features: [
             { text: 'Mở khoá toàn bộ hiệu ứng, font chữ, sticker Pro', type: 'good' },
             { text: 'Export 4K không watermark', type: 'good' },
             { text: 'Nhạc bản quyền dùng thương mại', type: 'good' },
-            { text: 'Dùng 1 thiết bị, chính chủ', type: 'info' },
+            { text: 'Có gói cố sẵn, cá nhân & nâng cấp chính chủ', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 50000, out: false },
-            { label: '3 Tháng', price: 130000, out: false },
-            { label: '6 Tháng', price: 240000, out: false },
-            { label: '12 Tháng', price: 420000, out: false },
+            { label: '1 Tháng', desc: 'Cấp Sẵn 1 Tháng Riêng Biệt — Đăng nhập bằng Email (Đăng nhập được 3-4 máy)', price: 45900, out: false },
+            { label: '3 Tháng', desc: 'Cấp Sẵn 3 Tháng Riêng Biệt — Đổi TK hàng tháng (Đăng nhập được 3-4 máy)', price: 192780, out: false },
+            { label: '6 Tháng', desc: 'Cấp Sẵn Đủ Hạn 6 Tháng, Hàng Đổi Nhóm (Đăng nhập được 3-4 máy)', price: 330480, out: false },
+            { label: '6 Tháng', desc: 'Cá Nhân Đầy Đủ Hạn 6 Tháng Riêng Biệt (Đăng nhập được 3-4 máy)', price: 385560, out: false },
+            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Cá Nhân Đầy Đủ Hạn 6 Tháng (Đăng nhập được 3-4 máy)', price: 440640, out: false },
+            { label: '12 Tháng', desc: 'Cấp Sẵn Đủ Hạn 12 Tháng, Hàng Đổi Nhóm (Đăng nhập được 3-4 máy)', price: 550800, out: false },
+            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Hạn 12 Tháng, Hàng Đổi Nhóm (Đăng nhập được 3-4 máy)', price: 633420, out: false },
         ]
     },
     {
@@ -89,19 +122,21 @@ const DEFAULT_PRODUCTS = [
         name: 'Canva Pro Chính Chủ',
         gradient: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
         labelColor: '#ddd6fe',
-        image: '',
+        image: './images/img-canva.jpg',
         paused: false,
         features: [
             { text: '100+ triệu ảnh stock, element Premium', type: 'good' },
             { text: 'Xóa nền AI, Magic Resize, Brand Kit', type: 'good' },
             { text: 'Xuất file với tất cả định dạng', type: 'good' },
-            { text: 'Tài khoản chính chủ, dùng email riêng', type: 'info' },
+            { text: 'Có gói Education & Full tính năng chính chủ', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 120000, out: false },
-            { label: '3 Tháng', price: 320000, out: false },
-            { label: '6 Tháng', price: 580000, out: false },
-            { label: '12 Tháng', price: 999000, out: false },
+            { label: '12 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 20160, out: false },
+            { label: '12 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 120960, out: false },
+            { label: '24 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 37632, out: false },
+            { label: '24 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 228480, out: false },
+            { label: '36 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 52416, out: false },
+            { label: '36 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 322560, out: false },
         ]
     },
     {
@@ -109,19 +144,21 @@ const DEFAULT_PRODUCTS = [
         name: 'Youtube Premium (Family)',
         gradient: 'linear-gradient(135deg, #7f1d1d, #450a0a)',
         labelColor: '#fca5a5',
-        image: '',
+        image: './images/img-ytb.webp',
         paused: false,
         features: [
             { text: 'Xem video không quảng cáo trên mọi thiết bị', type: 'good' },
             { text: 'Phát nhạc nền khi tắt màn hình', type: 'good' },
             { text: 'YouTube Music Premium đi kèm', type: 'good' },
-            { text: 'Gói Family — thêm vào gia đình của bạn', type: 'info' },
+            { text: 'Gói Family + Tặng kèm Canva Pro Edu các gói dài hạn', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 33000, out: false },
-            { label: '3 Tháng', price: 90000, out: false },
-            { label: '6 Tháng', price: 170000, out: false },
-            { label: '12 Tháng', price: 320000, out: false },
+            { label: '1 Tháng', desc: 'YouTube Premium Family — Không kèm Canva Pro Edu', price: 39150, out: false },
+            { label: '3 Tháng', desc: 'YouTube Premium Family — Không kèm Canva Pro Edu', price: 99833, out: false },
+            { label: '6 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 1 Năm', price: 187920, out: false },
+            { label: '12 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 1 Năm', price: 352350, out: false },
+            { label: '24 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 2 Năm', price: 610740, out: false },
+            { label: '36 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 3 Năm', price: 845640, out: false },
         ]
     },
     {
@@ -129,99 +166,74 @@ const DEFAULT_PRODUCTS = [
         name: 'Netflix Ultra 4K',
         gradient: 'linear-gradient(135deg, #b91c1c, #1c1917)',
         labelColor: '#fca5a5',
-        image: '',
+        image: './images/img-netflix.jpg',
         paused: false,
         features: [
             { text: '4K Ultra HD + HDR, Dolby Atmos', type: 'good' },
-            { text: '4 màn hình cùng lúc', type: 'good' },
+            { text: 'Profile riêng + Pin riêng — không bị xâm phạm', type: 'good' },
             { text: 'Tải phim xem offline', type: 'good' },
-            { text: 'Tài khoản dùng chung, không chính chủ', type: 'warn' },
+            { text: 'Nhập số điện thoại để được hỗ trợ nhanh', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 120000, out: false },
-            { label: '3 Tháng', price: 330000, out: false },
-            { label: '6 Tháng', price: 620000, out: false },
-            { label: '12 Tháng', price: 1150000, out: false },
+            { label: '1 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 99900, out: true },
+            { label: '3 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 314685, out: false },
+            { label: '6 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 611388, out: true },
+            { label: '12 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 1150000, out: false },
         ]
     },
     {
         id: 'spotify',
-        name: 'Spotify Premium (Individual)',
+        name: 'Spotify Premium',
         gradient: 'linear-gradient(135deg, #14532d, #052e16)',
         labelColor: '#4ade80',
-        image: '',
+        image: './images/img-spotify.webp',
         paused: false,
         features: [
             { text: 'Nghe nhạc không quảng cáo, không giới hạn', type: 'good' },
             { text: 'Tải nhạc nghe offline', type: 'good' },
             { text: 'Chất lượng âm thanh cao nhất', type: 'good' },
-            { text: 'Tài khoản cá nhân chính chủ', type: 'info' },
+            { text: 'Tài khoản cá nhân chính chủ giá rẻ', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 59000, out: false },
-            { label: '3 Tháng', price: 160000, out: false },
-            { label: '6 Tháng', price: 299000, out: false },
-            { label: '12 Tháng', price: 549000, out: false },
+            { label: '4 Tháng', desc: 'Tài Khoản Spotify Premium Cá Nhân — Chính chủ giá rẻ', price: 183600, out: false },
+            { label: '1 Năm', desc: 'Tài Khoản Spotify Premium Cá Nhân — Chính chủ giá rẻ', price: 499000, out: false },
         ]
     },
     {
-        id: 'cursor-cap-san',
-        name: 'Cursor Pro Cấp Sẵn',
-        gradient: 'linear-gradient(135deg, #0c4a6e, #082f49)',
+        id: 'cursor-pro',
+        name: 'Cursor Pro AI',
+        gradient: 'linear-gradient(135deg, #0c2d4e, #0a1628)',
         labelColor: '#7dd3fc',
-        image: '',
+        image: './images/img-cursor.webp',
         paused: false,
         features: [
-            { text: 'AI code completion cực mạnh', type: 'good' },
-            { text: 'Claude Sonnet, GPT-4 tích hợp sẵn', type: 'good' },
+            { text: 'Tài Khoản Cursor Pro AI + Cursor Pro Plus', type: 'good' },
+            { text: 'AI code completion siêu mạnh với Claude, GPT-4', type: 'good' },
             { text: 'Unlimited fast requests mỗi tháng', type: 'good' },
-            { text: 'Tài khoản dùng chung theo slot', type: 'warn' },
+            { text: 'Có lựa chọn dùng riêng & nâng cấp chính chủ', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 360000, out: false },
-            { label: '3 Tháng', price: 990000, out: false },
-            { label: '6 Tháng', price: 1800000, out: false },
-            { label: '12 Tháng', price: 3200000, out: false },
-        ]
-    },
-    {
-        id: 'cursor-chinh-chu',
-        name: 'Cursor Pro Chính Chủ 1 tháng',
-        gradient: 'linear-gradient(135deg, #1e3a5f, #0a1628)',
-        labelColor: '#93c5fd',
-        image: '',
-        paused: false,
-        features: [
-            { text: 'Tài khoản chính chủ — email riêng của bạn', type: 'good' },
-            { text: 'Không chia sẻ với ai khác', type: 'good' },
-            { text: 'Unlimited requests, không lo bị giới hạn', type: 'good' },
-            { text: 'Hỗ trợ kích hoạt trực tiếp', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', price: 430000, out: false },
-            { label: '3 Tháng', price: 1200000, out: false },
-            { label: '6 Tháng', price: 2200000, out: true },
-            { label: '12 Tháng', price: 3900000, out: false },
+            { label: '1 Tháng', desc: 'Tài Khoản Cursor Pro — Dùng Riêng', price: 459000, out: false },
+            { label: '1 Tháng', desc: 'Nâng Cấp Chính Chủ Cursor Pro — Email + Pass riêng', price: 481950, out: true },
+            { label: '1 Tháng', desc: 'Tài Khoản Cursor Pro Plus — Dùng Riêng', price: 1147500, out: true },
         ]
     },
     {
         id: 'ms365',
-        name: 'Microsoft 365 Premium (Office)',
+        name: 'Microsoft Office 365',
         gradient: 'linear-gradient(135deg, #1e3a5f, #0c2340)',
         labelColor: '#93c5fd',
-        image: '',
+        image: './images/img-ms365.webp',
         paused: false,
         features: [
-            { text: 'Word, Excel, PowerPoint, Outlook, Teams', type: 'good' },
+            { text: 'Word, Excel, PowerPoint, Outlook, Teams, Copilot AI', type: 'good' },
             { text: 'OneDrive 1TB cloud storage', type: 'good' },
-            { text: 'Cài 5 máy tính, 5 điện thoại', type: 'good' },
+            { text: 'Nâng cấp chính chủ tài khoản Microsoft của bạn', type: 'good' },
             { text: 'Bản quyền chính hãng, luôn cập nhật', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 150000, out: false },
-            { label: '3 Tháng', price: 400000, out: false },
-            { label: '6 Tháng', price: 740000, out: false },
-            { label: '12 Tháng', price: 1350000, out: false },
+            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Microsoft Office 365 Copilot + One Driver 1TB', price: 121500, out: false },
+            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Microsoft Office 365 Copilot + One Driver 1TB', price: 194400, out: false },
         ]
     },
     {
@@ -229,99 +241,56 @@ const DEFAULT_PRODUCTS = [
         name: 'Adobe Full Apps',
         gradient: 'linear-gradient(135deg, #7c2d12, #431407)',
         labelColor: '#fb923c',
-        image: '',
+        image: './images/img-adobe.webp',
         paused: false,
         features: [
             { text: 'Photoshop, Illustrator, Premiere, After Effects', type: 'good' },
             { text: 'Lightroom, InDesign, XD và 20+ app khác', type: 'good' },
             { text: '100GB cloud storage', type: 'good' },
-            { text: 'Bản Creative Cloud chính hãng', type: 'info' },
+            { text: 'Bản Creative Cloud chính hãng — Full 20+ Apps', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', price: 230000, out: false },
-            { label: '3 Tháng', price: 640000, out: false },
-            { label: '6 Tháng', price: 1200000, out: false },
-            { label: '12 Tháng', price: 2100000, out: false },
+            { label: '1 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 60750, out: true },
+            { label: '4 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 243000, out: false },
+            { label: '12 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 729000, out: false },
         ]
     },
     {
-        id: 'discord-nitro',
-        name: 'Discord Nitro',
-        gradient: 'linear-gradient(135deg, #3730a3, #1e1b4b)',
-        labelColor: '#a5b4fc',
-        image: '',
-        paused: false,
-        features: [
-            { text: 'Boost server, upload file đến 500MB', type: 'good' },
-            { text: 'Sticker, emoji animated, avatar động', type: 'good' },
-            { text: 'Kết nối Go Live chất lượng 4K', type: 'good' },
-            { text: 'Tài khoản chính chủ của bạn', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', price: 100000, out: false },
-            { label: '3 Tháng', price: 270000, out: false },
-            { label: '6 Tháng', price: 510000, out: false },
-            { label: '12 Tháng', price: 950000, out: false },
-        ]
-    },
-    {
-        id: 'perplexity',
-        name: 'Perplexity Pro',
-        gradient: 'linear-gradient(135deg, #134e4a, #042f2e)',
-        labelColor: '#5eead4',
-        image: '',
-        paused: false,
-        features: [
-            { text: 'AI tìm kiếm thông minh, không quảng cáo', type: 'good' },
-            { text: 'Dùng được GPT-4, Claude Opus, Gemini', type: 'good' },
-            { text: 'Tải file, phân tích PDF, hình ảnh', type: 'good' },
-            { text: 'Tài khoản chính chủ', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', price: 436000, out: false },
-            { label: '3 Tháng', price: 1200000, out: false },
-            { label: '6 Tháng', price: 2200000, out: false },
-            { label: '12 Tháng', price: 4000000, out: false },
-        ]
-    },
-    {
-        id: 'sora2',
-        name: 'Sora 2',
-        gradient: 'linear-gradient(135deg, #1c1917, #0c0a09)',
-        labelColor: '#d4d4d4',
-        image: '',
-        paused: false,
-        features: [
-            { text: 'Tạo video AI từ văn bản siêu thực', type: 'good' },
-            { text: 'Độ phân giải 1080p, tối đa 20 giây', type: 'good' },
-            { text: 'Không cần kỹ năng chỉnh sửa', type: 'good' },
-            { text: 'Tài khoản dùng chung theo slot', type: 'warn' },
-        ],
-        durations: [
-            { label: '1 Tháng', price: 60000, out: false },
-            { label: '3 Tháng', price: 165000, out: false },
-            { label: '6 Tháng', price: 300000, out: false },
-            { label: '12 Tháng', price: 550000, out: false },
-        ]
-    },
-    {
-        id: 'veo3',
-        name: 'Veo3 Ultra 45k credit',
-        gradient: 'linear-gradient(135deg, #172554, #1e1b4b)',
+        id: 'zoom-pro',
+        name: 'Zoom Pro',
+        gradient: 'linear-gradient(135deg, #1a56db, #0e3fad)',
         labelColor: '#93c5fd',
-        image: '',
+        image: './images/img-zoom.webp',
+        paused: false,
+        features: [
+            { text: 'Tài Khoản Zoom Pro Phòng Họp 100 Người', type: 'good' },
+            { text: 'Không giới hạn thời gian cuộc họp', type: 'good' },
+            { text: 'Ghi âm cloud, whiteboards, breakout rooms', type: 'good' },
+            { text: 'Giá rẻ, bảo hành toàn thời gian sử dụng', type: 'info' },
+        ],
+        durations: [
+            { label: '1 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 132300, out: false },
+            { label: '3 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 370000, out: false },
+            { label: '6 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 700000, out: false },
+            { label: '12 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 1300000, out: false },
+        ]
+    },
+    {
+        id: 'zalo-group-1000',
+        name: 'Nh\u00f3m Zalo 1000 Members',
+        gradient: 'linear-gradient(135deg, #0068FF, #004ecc)',
+        labelColor: '#ffffff',
+        image: 'https://thatim.vn/uploads/images/original/jH1-gjQ-HoK-nfC-26-09-2025-16.webp',
         paused: true,
         features: [
-            { text: 'Tạo video AI với chất lượng điện ảnh', type: 'good' },
-            { text: '45.000 credit tương đương nhiều video', type: 'good' },
-            { text: 'Hỗ trợ âm thanh, nhạc nền tự động', type: 'good' },
-            { text: 'Sản phẩm đang tạm ngưng — liên hệ để hỏi', type: 'warn' },
+            { text: 'Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 Th\u00e0nh Vi\u00ean Ch\u1edd X\u00e9t Duy\u1ec7t', type: 'good' },
+            { text: 'Nh\u00f3m th\u1eadt, th\u00e0nh vi\u00ean th\u1eadt \u2014 kh\u00f4ng bot', type: 'good' },
+            { text: 'Ph\u00f9 h\u1ee3p Marketing, kinh doanh online', type: 'good' },
+            { text: 'S\u1ea3n ph\u1ea9m \u0111ang t\u1ea1m ng\u01b0ng \u2014 li\u00ean h\u1ec7 \u0111\u1ec3 h\u1ecfi th\u00eam', type: 'warn' },
         ],
         durations: [
-            { label: '45k credit', price: 200000, out: false },
-            { label: '90k credit', price: 380000, out: false },
-            { label: 'Gói lớn', price: 700000, out: true },
-            { label: 'Enterprise', price: 1500000, out: true },
+            { label: '1 Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 TV', price: 189000, out: true },
+            { label: '5 Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 TV', price: 756000, out: true },
         ]
     },
 ];
@@ -342,40 +311,43 @@ function init() {
 }
 
 function loadProducts() {
+    const DATA_VER = 'v20260301_2';
+
+    const savedVer = localStorage.getItem('accshop_ver');
     const saved = localStorage.getItem('accshop_products');
-    products = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+    if (!saved || savedVer !== DATA_VER) {
+        localStorage.removeItem('accshop_products');
+        localStorage.setItem('accshop_ver', DATA_VER);
+        products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+    } else {
+        products = JSON.parse(saved);
+    }
 }
 
 function saveProducts() {
     localStorage.setItem('accshop_products', JSON.stringify(products));
 }
-
 // ─── RENDER ───
 function renderAll() {
     const main = document.getElementById('main');
+
     const active = products.filter(p => !p.paused);
     const paused = products.filter(p => p.paused);
 
     let html = '';
+    html += `<div class="section-title">TẤT CẢ SẢN PHẨM</div>`;
 
-    // Active products
-    html += `<div class="section-title">🔥 Tất cả sản phẩm</div>`;
     html += `<div class="product-grid" id="activeGrid">`;
     active.forEach(p => { html += renderCard(p); });
     html += `</div>`;
 
-    // Paused products
     if (paused.length > 0) {
-        html += `
-      <div class="paused-toggle">
-        <button class="paused-toggle-btn" id="pausedToggle" onclick="togglePausedSection()">
-          ⏸ Sản phẩm tạm ngưng <span class="paused-count">${paused.length}</span>
-        </button>
-      </div>
-      <div class="product-grid" id="pausedGrid" style="display:none">
-        ${paused.map(p => renderCard(p)).join('')}
-      </div>
-    `;
+        html += `<div class="paused-section">`;
+        html += `<button class="paused-section-toggle" onclick="togglePausedSection()" id="pausedToggleBtn"><span class="paused-toggle-icon" id="pausedChevron">▼</span><span>Sản phẩm tạm ngưng <span class="paused-count">(${paused.length})</span></span></button>`;
+
+        html += `<div class="product-grid paused-grid" id="pausedGrid" style="display:none">`;
+        paused.forEach(p => { html += renderCard(p); });
+        html += `</div></div>`;
     }
 
     main.innerHTML = html;
@@ -383,19 +355,26 @@ function renderAll() {
 
 function renderCard(p) {
     const minPrice = Math.min(...p.durations.filter(d => !d.out).map(d => d.price));
+    const origPrice = p.originalPrice || Math.round(minPrice * 1.4 / 1000) * 1000;
+    const discount = Math.round((1 - minPrice / origPrice) * 100);
     const imgStyle = p.image
         ? `background-image: url('${p.image}'); background-size: cover; background-position: center;`
         : `background: ${p.gradient};`;
 
     return `
-    <div class="product-card${p.paused ? ' paused' : ''}${selectedProductId === p.id ? ' selected' : ''}"
+    <div class="product-card${p.paused ? ' paused' : ''}${selectedProductId === p.id ? ' selected' : ''}${p.badge ? ' has-badge' : ''}"
       data-id="${p.id}" onclick="handleCardClick('${p.id}')">
       <div class="card-img" style="${imgStyle}">
         ${!p.image ? `<div class="card-img-label" style="color:${p.labelColor}">${p.name.split(' ').slice(0, 2).join(' ')}</div>` : ''}
         ${p.paused ? `<div class="card-paused-badge">TẠM NGƯNG</div>` : ''}
+        ${p.badge ? `<div class="card-hot-badge">${p.badge}</div>` : ''}
       </div>
       <div class="card-info">
         <h3 class="card-name">${p.name}</h3>
+        <div class="card-price-row">
+          <span class="card-old-price">${formatVND(origPrice)}đ</span>
+          <span class="card-discount">-${discount}%</span>
+        </div>
         <div class="card-price">chỉ từ <span>${formatVND(minPrice)}VNĐ</span></div>
       </div>
       <button class="card-edit-btn" onclick="openAdminEdit(event, '${p.id}')">✏️ Sửa</button>
@@ -404,13 +383,13 @@ function renderCard(p) {
 }
 
 function handleCardClick(id) {
-    if (adminMode) return; // In admin mode, edit btn handles it
+    if (adminMode) return;
     selectedProductId = id;
-    // Update selected style
     document.querySelectorAll('.product-card').forEach(c => c.classList.remove('selected'));
     document.querySelector(`[data-id="${id}"]`)?.classList.add('selected');
     openDetail(id);
 }
+
 
 // ─── DETAIL MODAL ───
 function openDetail(id) {
@@ -441,8 +420,11 @@ function renderDetailBody(p) {
     <div class="dur-btn${i === selectedDurIdx ? ' selected' : ''}${d.out ? ' out' : ''}"
       onclick="${d.out ? '' : `selectDur(${i})`}">
       ${d.out ? `<div class="out-badge">Hết hàng</div>` : ''}
-      <div class="dur-btn-label">${d.label}</div>
-      <div class="dur-btn-price">${formatVND(d.price * detailQty)}đ</div>
+      <div class="dur-btn-top">
+        <div class="dur-btn-label">${d.label}</div>
+        <div class="dur-btn-price">${formatVND(d.price * detailQty)}đ</div>
+      </div>
+      ${d.desc ? `<div class="dur-btn-desc">${d.desc}</div>` : ''}
     </div>
   `).join('');
 
@@ -472,9 +454,10 @@ function renderDetailBody(p) {
     </div>
 
     <div class="detail-actions">
-      <button class="btn-buy" onclick="copyOrder('${p.id}')">🛒 Mua hàng</button>
+      <button class="btn-buy" disabled title="Vui lòng liên hệ qua Nhắn tin để đặt hàng">🛒 Mua hàng</button>
       <button class="btn-msg" onclick="goContact()">💬 Nhắn tin</button>
     </div>
+
   `;
 }
 
@@ -509,13 +492,13 @@ function copyOrder(id) {
     const total = calcTotal(p);
     const msg = `Đặt hàng: ${p.name}\nThời hạn: ${dur.label}\nSố lượng: ${detailQty}\nTổng: ${formatVND(total)}đ\n\nVui lòng xác nhận và gửi thông tin thanh toán cho mình nhé!`;
     navigator.clipboard.writeText(msg).catch(() => { });
-    toast('✅ Đã copy thông tin đơn hàng! Gửi cho shop qua Zalo/Telegram để thanh toán.');
     closeDetail();
+    openContactPopup();
 }
 
 function goContact() {
-    toast('💬 Liên hệ shop qua Zalo: 0868192500 hoặc sieuthinick.store', 'warn');
     closeDetail();
+    openContactPopup();
 }
 
 // ─── TERMS PAGE ───
@@ -541,13 +524,6 @@ function filterProducts(q) {
     });
 }
 
-// ─── PAUSED SECTION ───
-function togglePausedSection() {
-    const grid = document.getElementById('pausedGrid');
-    if (!grid) return;
-    const isHidden = grid.style.display === 'none';
-    grid.style.display = isHidden ? 'grid' : 'none';
-}
 
 // ─── ADMIN MODE ───
 function toggleAdmin() {
@@ -557,6 +533,17 @@ function toggleAdmin() {
         toast('⚙️ Đã bật chế độ Admin — Click ✏️ trên sản phẩm để chỉnh sửa');
     }
 }
+
+// ─── PAUSED SECTION ───
+function togglePausedSection() {
+    const grid = document.getElementById('pausedGrid');
+    const chevron = document.getElementById('pausedChevron');
+    if (!grid) return;
+    const isHidden = grid.style.display === 'none';
+    grid.style.display = isHidden ? 'grid' : 'none';
+    if (chevron) chevron.textContent = isHidden ? '▲' : '▼';
+}
+
 
 function openAdminEdit(e, id) {
     e.stopPropagation();
@@ -786,6 +773,7 @@ function setupGlobalEvents() {
         if (e.key === 'Escape') {
             closeDetail();
             closeAdminModal();
+            closeContactPopup();
         }
     });
 
@@ -816,5 +804,178 @@ function formatVND(n) {
     return new Intl.NumberFormat('vi-VN').format(n);
 }
 
+// ─── CONTACT POPUP ───
+function openContactPopup() {
+    document.getElementById('contactPopupOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactPopup() {
+    document.getElementById('contactPopupOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+
+// ─── FAB SPEED DIAL ───
+function toggleFab() {
+    document.getElementById('fabWrap').classList.toggle('open');
+}
+
+// ─── THEME TOGGLE ───
+function toggleTheme() {
+    const isLight = document.body.classList.contains('light-mode');
+    const btn = document.getElementById('themeBtn');
+    if (isLight) {
+        // Switch to dark
+        document.body.classList.remove('light-mode');
+        btn.textContent = '🌙';
+        localStorage.setItem('accshop_theme', 'dark');
+    } else {
+        // Switch to light
+        document.body.classList.add('light-mode');
+        btn.textContent = '☀️';
+        localStorage.setItem('accshop_theme', 'light');
+    }
+}
+
+function loadTheme() {
+    const saved = localStorage.getItem('accshop_theme');
+    const btn = document.getElementById('themeBtn');
+    if (saved === 'dark') {
+        document.body.classList.remove('light-mode');
+        if (btn) btn.textContent = '🌙';
+    } else {
+        // Default = light (body already has light-mode class)
+        document.body.classList.add('light-mode');
+        if (btn) btn.textContent = '☀️';
+    }
+}
+
 // ─── START ───
+loadTheme();
 init();
+
+// --- WELCOME POPUP ---
+(function () {
+    const DELAY = 700;
+    const AUTO_CLOSE = 7200;
+
+    function setVisible(visible) {
+        const el = document.getElementById('welcomePopup');
+        const bd = document.getElementById('wpBackdrop');
+        const dot = document.getElementById('popupToggleDot');
+        if (!el) return;
+        if (visible) {
+            el.classList.remove('hide'); el.classList.add('show');
+            if (bd) bd.classList.add('show');
+            if (dot) dot.classList.remove('active');
+        } else {
+            el.classList.remove('show'); el.classList.add('hide');
+            if (bd) bd.classList.remove('show');
+            if (dot) dot.classList.add('active');
+        }
+    }
+
+    window.closeWelcome = function () { setVisible(false); };
+    window.toggleWelcomePopup = function () {
+        const el = document.getElementById('welcomePopup');
+        if (el) setVisible(!el.classList.contains('show'));
+    };
+
+    window.addEventListener('DOMContentLoaded', function () {
+        const snoozed = localStorage.getItem('wp_snoozed');
+        if (snoozed && Date.now() < parseInt(snoozed)) return; // still snoozed
+        setTimeout(function () { setVisible(true); }, DELAY);
+        setTimeout(function () { setVisible(false); }, DELAY + AUTO_CLOSE);
+    });
+})();
+// ─── DISMISS FOR 15 MINUTES ───
+window.dismissWelcome15 = function () {
+    localStorage.setItem('wp_snoozed', Date.now() + 15 * 60 * 1000);
+    window.closeWelcome();
+};
+
+// ─── FAQ ACCORDION ───
+function toggleFaq(el) {
+    el.classList.toggle('open');
+}
+
+
+
+// ─── BACK TO TOP ───
+window.addEventListener('scroll', function () {
+    const btn = document.getElementById('backToTop');
+    if (btn) btn.classList.toggle('show', window.scrollY > 400);
+});
+// ─── FLASH SALE COUNTDOWN ───
+function initFlashSale() {
+    function getEndOfDay() {
+        const now = new Date();
+        const end = new Date(now);
+        end.setHours(23, 59, 59, 999);
+        return end;
+    }
+    function updateTimer() {
+        const now = new Date();
+        const end = getEndOfDay();
+        let diff = Math.max(0, Math.floor((end - now) / 1000));
+        const h = Math.floor(diff / 3600);
+        diff %= 3600;
+        const m = Math.floor(diff / 60);
+        const s = diff % 60;
+        const hEl = document.getElementById('fsHours');
+        const mEl = document.getElementById('fsMinutes');
+        const sEl = document.getElementById('fsSeconds');
+        if (hEl) hEl.textContent = String(h).padStart(2, '0');
+        if (mEl) mEl.textContent = String(m).padStart(2, '0');
+        if (sEl) sEl.textContent = String(s).padStart(2, '0');
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+}
+
+// ─── COUNTING ANIMATION ───
+function initCountAnimation() {
+    const nums = document.querySelectorAll('.trust-num[data-count]');
+    if (!nums.length) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            if (el.dataset.animated) return;
+            el.dataset.animated = '1';
+            const target = parseInt(el.dataset.count, 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 1800;
+            const start = performance.now();
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(eased * target);
+                el.textContent = current.toLocaleString('vi-VN') + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    el.textContent = target.toLocaleString('vi-VN') + suffix;
+                    el.classList.add('counted');
+                }
+            }
+            requestAnimationFrame(tick);
+        });
+    }, { threshold: 0.3 });
+    nums.forEach(n => observer.observe(n));
+}
+
+// ─── FAQ ACCORDION ───
+function toggleFaq(el) {
+    const isOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(item => item.classList.remove('open'));
+    if (!isOpen) el.classList.add('open');
+}
+
+// init on load
+document.addEventListener('DOMContentLoaded', function () {
+    initFlashSale();
+    initCountAnimation();
+});

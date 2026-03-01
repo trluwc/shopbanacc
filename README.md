@@ -20,6 +20,6 @@ Website bán tài khoản Premium uy tín: ChatGPT Plus, Capcut Pro, Spotify, Ne
 - Responsive (mobile + desktop)
 
 ## 💬 Liên hệ
-- Zalo: 0123.456.789
-- Facebook: fb.com/accvault.shop
-- Telegram: @accvault_shop
+- Zalo: 0868192500
+- Facebook:(https://www.facebook.com/LucTV66/)
+

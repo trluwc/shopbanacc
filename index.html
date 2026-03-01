@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -12,15 +12,73 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>">
 </head>
 
-<body>
+<body class="light-mode">
+
+    <!-- WELCOME MODAL -->
+    <div class="wp-backdrop" id="wpBackdrop" onclick="closeWelcome()"></div>
+    <div class="welcome-popup" id="welcomePopup">
+        <div class="wp-glow"></div>
+        <button class="wp-close" onclick="closeWelcome()" aria-label="Đóng">✕</button>
+
+        <div class="wp-header">
+            <svg class="wp-header-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.07 3.47 2 2 0 0 1 3 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17z" />
+            </svg>
+            <span class="wp-header-text">KÊNH LIÊN HỆ HỖ TRỢ CHÍNH THỨC</span>
+        </div>
+
+        <div class="wp-rows">
+            <div class="wp-row">
+                <svg class="wp-row-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00b14f"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span class="wp-row-label">Zalo Support:</span>
+                <a class="wp-row-link" href="https://zalo.me/0868192500" target="_blank">Nhấn vào đây để liên hệ</a>
+            </div>
+            <div class="wp-row">
+                <svg class="wp-row-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f87171"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.07 3.47 2 2 0 0 1 3 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17z" />
+                </svg>
+                <span class="wp-row-label">Hotline / Zalo:</span>
+                <a class="wp-row-highlight" href="tel:0868192500">0868 192 500</a>
+            </div>
+            <div class="wp-row">
+                <svg class="wp-row-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <span class="wp-row-label">Thời gian hỗ trợ:</span>
+                <span class="wp-row-text">08:00 – 24:00</span>
+            </div>
+            <div class="wp-row-sub">(Kể cả cuối tuần &amp; ngày lễ)</div>
+        </div>
+
+        <div class="wp-footer">
+            <button class="wp-dismiss-btn" onclick="dismissWelcome15()"><svg width="13" height="13" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="margin-right:5px;vertical-align:middle">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>Tắt 15p</button>
+        </div>
+
+
+        <div class="wp-progress" id="wpProgress"></div>
+    </div>
 
     <!-- HEADER -->
     <header class="header">
         <div class="header-logo" id="siteLogo" title="Double-click để vào admin">
-            <span class="logo-gem">💎</span>
-            <span>sieuthinick.store</span>
+            <span class="logo-name">sieuthinick.store</span>
             <span class="logo-badge">Shop</span>
         </div>
+
 
         <nav class="header-nav">
             <a href="#" onclick="showTerms(); return false;">Điều khoản & Dịch vụ</a>
@@ -30,10 +88,46 @@
 
         <div class="header-search">
             <input type="text" id="searchInput" placeholder="Tìm tên sản phẩm..." oninput="filterProducts(this.value)">
-            <button class="search-btn">🔍</button>
+            <button class="search-btn" aria-label="Tìm kiếm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
         </div>
 
-        <button class="header-btn" title="Cài đặt">⚙️</button>
+        <button class="header-btn theme-btn" id="themeBtn" onclick="toggleTheme()" title="Chuyển theme"
+            aria-label="Chuyển theme">
+            <!-- Moon (dark mode active) -->
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
+            </svg>
+            <!-- Sun (light mode active) -->
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="4" />
+                <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+            </svg>
+        </button>
+
+
+        <!-- Popup toggle button -->
+        <button class="header-btn popup-toggle-btn" id="popupToggleBtn" onclick="toggleWelcomePopup()"
+            title="Bật/tắt bảng thông tin">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+            <span class="popup-toggle-dot" id="popupToggleDot"></span>
+        </button>
+
+    </header>
     </header>
 
     <!-- TICKER -->
@@ -41,20 +135,34 @@
         <div class="ticker" id="ticker">
             <span>Chào mừng bạn đến với <b>SieuThiNick.Store</b> — Nơi cung cấp các dịch vụ & tài khoản Premium uy tín,
                 chất lượng
-                nhất! +++ <b>Bảo hành trọn đời</b> +++ Hỗ trợ 24/7 qua Zalo & Telegram +++ Flash sale mỗi tuần, giảm đến
+                nhất! +++ <b>Bảo hành trọn đời</b> +++ Hỗ trợ 24/7 qua Zalo & Facebook +++ Flash sale mỗi tuần, giảm đến
                 50% +++</span>
             <span>Chào mừng bạn đến với <b>SieuThiNick.Store</b> — Nơi cung cấp các dịch vụ & tài khoản Premium uy tín,
                 chất lượng
-                nhất! +++ <b>Bảo hành trọn đời</b> +++ Hỗ trợ 24/7 qua Zalo & Telegram +++ Flash sale mỗi tuần, giảm đến
+                nhất! +++ <b>Bảo hành trọn đời</b> +++ Hỗ trợ 24/7 qua Zalo & Facebook +++ Flash sale mỗi tuần, giảm đến
                 50% +++</span>
         </div>
     </div>
 
     <!-- BANNER -->
     <div class="banner" id="banner">
-        <div class="banner-content">
-            <div class="banner-sub">💎 Uy tín từ 2022 · 10,000+ khách hàng</div>
-            <div class="banner-title" id="bannerTitle">sieuthinick.store</div>
+        <img class="banner-img" src="./images/banner.jpg" alt="sieuthinick.store banner">
+    </div>
+
+    <!-- FLASH SALE BANNER -->
+    <div class="flash-sale-bar" id="flashSaleBar">
+        <div class="flash-sale-inner">
+
+
+            <span class="flash-sale-label">FLASH SALE</span>
+            <div class="flash-sale-timer" id="flashSaleTimer">
+                <div class="timer-box"><span id="fsHours">00</span><small>Giờ</small></div>
+                <span class="timer-sep">:</span>
+                <div class="timer-box"><span id="fsMinutes">00</span><small>Phút</small></div>
+                <span class="timer-sep">:</span>
+                <div class="timer-box"><span id="fsSeconds">00</span><small>Giây</small></div>
+            </div>
+            <span class="flash-sale-text">Giảm đến <b>50%</b> — Số lượng có hạn!</span>
         </div>
     </div>
 
@@ -99,8 +207,75 @@
         </div>
     </div>
 
+    <!-- CONTACT POPUP -->
+    <div class="contact-popup-overlay" id="contactPopupOverlay" onclick="closeContactPopup()">
+        <div class="contact-popup" onclick="event.stopPropagation()">
+            <div class="contact-popup-header">
+                <span>Liên hệ mua hàng</span>
+                <button class="contact-popup-close" onclick="closeContactPopup()">✕</button>
+            </div>
+            <p class="contact-popup-note">Nhắn tin cho shop để được tư vấn và mua hàng</p>
+            <div class="contact-popup-btns">
+                <a class="contact-popup-btn zalo" href="https://zalo.me/0868192500" target="_blank" rel="noopener">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" width="22"
+                        height="22" alt="Zalo" style="border-radius:4px;">
+                    Zalo
+                </a>
+                <span class="contact-popup-btn facebook disabled" title="Tạm ngưng — liên hệ qua Zalo">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z" />
+                    </svg>
+                    Facebook
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- TOAST -->
     <div class="toast-wrap" id="toastWrap"></div>
+
+    <!-- FAB SPEED DIAL -->
+    <div class="fab-wrap" id="fabWrap">
+        <!-- Popup card -->
+        <div class="fab-popup" id="fabPopup">
+            <div class="fab-popup-item fab-popup-item--disabled">
+                <div class="fab-popup-icon fab-fb-icon fab-icon--disabled">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path
+                            d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z" />
+                    </svg>
+                </div>
+                <div class="fab-popup-text">
+                    <span class="fab-popup-name">Fanpage Facebook</span>
+                    <span class="fab-popup-sub fab-sub--disabled">Tạm ngưng — liên hệ Zalo</span>
+                </div>
+            </div>
+            <a class="fab-popup-item" href="https://zalo.me/0868192500" target="_blank" rel="noopener">
+                <div class="fab-popup-icon fab-zalo-icon" style="background:transparent;padding:0;overflow:hidden;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" width="44"
+                        height="44" alt="Zalo"
+                        style="display:block;width:44px;height:44px;object-fit:cover;border-radius:50%;">
+                </div>
+                <div class="fab-popup-text">
+                    <span class="fab-popup-name">Zalo Hỗ Trợ</span>
+                    <span class="fab-popup-sub">Hỗ trợ live chat 24/7</span>
+                </div>
+            </a>
+        </div>
+        <!-- Main trigger button -->
+        <button class="float-contact-btn" id="fabMainBtn" onclick="toggleFab()">
+            <span class="float-contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+            </span>
+            <span class="float-contact-label">Liên hệ chúng tôi</span>
+        </button>
+    </div>
 
     <!-- TERMS PAGE -->
     <div id="termsPage"
@@ -158,6 +333,255 @@
 
     <!-- File input (hidden) -->
     <input type="file" id="imgUpload" accept="image/*" style="display:none" onchange="handleImgUpload(this)">
+
+    <!-- WHY CHOOSE US -->
+    <section class="trust-section">
+        <div class="trust-inner">
+            <div class="trust-item">
+                <div class="trust-num" data-count="500" data-suffix="+">500+</div>
+                <div class="trust-label">Khách hàng tin dùng</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num" data-count="98" data-suffix="%">98%</div>
+                <div class="trust-label">Tỷ lệ hài lòng</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num" data-text="24/7">24/7</div>
+                <div class="trust-label">Hỗ trợ liên tục</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-num" data-text="30s">30s</div>
+                <div class="trust-label">Thời gian kích hoạt</div>
+            </div>
+        </div>
+        <div class="trust-badges-row">
+            <div class="trust-badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <div class="trust-badge-text">
+                    <span class="trust-badge-title">Bảo mật SSL</span>
+                    <span class="trust-badge-sub">Mã hóa 256-bit mọi giao dịch</span>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                <div class="trust-badge-text">
+                    <span class="trust-badge-title">Cam kết hoàn tiền</span>
+                    <span class="trust-badge-sub">100% trong 24h nếu không hài lòng</span>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                <div class="trust-badge-text">
+                    <span class="trust-badge-title">Kích hoạt tức thì</span>
+                    <span class="trust-badge-sub">Nhận tài khoản chỉ trong 30 giây</span>
+                </div>
+            </div>
+            <div class="trust-badge-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                <div class="trust-badge-text">
+                    <span class="trust-badge-title">Doanh nghiệp chính thức</span>
+                    <span class="trust-badge-sub">Hoạt động theo pháp luật VN</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section class="reviews-section">
+        <div class="reviews-inner">
+            <div class="reviews-header">
+                <span class="reviews-eyebrow">ĐÁNH GIÁ</span>
+                <h2 class="reviews-title">Khách hàng nói gì về chúng tôi?</h2>
+                <p class="reviews-subtitle">Hơn 500+ khách hàng đã tin tưởng và hài lòng với dịch vụ của SieuThiNick</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-top">
+                        <img class="review-avatar"
+                            src="https://shop.nemarkdigital.com/assets/images/avatars/nguyen_van_an.png"
+                            alt="Minh Tuấn">
+                        <div class="review-meta">
+                            <span class="review-name">Minh Tuấn</span>
+                            <span class="review-job">Lập trình viên Full-stack</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Mua ChatGPT Plus chính chủ, dùng 3 tháng rồi vẫn rất ổn. Bảo hành nhanh, rep
+                        Zalo 5 phút là có. Giá rẻ hơn mua trực tiếp nhiều, sẽ tiếp tục ủng hộ shop."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <img class="review-avatar"
+                            src="https://shop.nemarkdigital.com/assets/images/avatars/tran_thi_minh.png" alt="Thu Hằng">
+                        <div class="review-meta">
+                            <span class="review-name">Thu Hằng</span>
+                            <span class="review-job">Nhà sáng tạo nội dung</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Canva Pro giá quá rẻ so với mua chính hãng, dùng chính chủ nên rất yên tâm.
+                        Thao tác nâng cấp đơn giản, shop hỗ trợ tận tình từng bước. Sẽ ủng hộ dài lâu!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <img class="review-avatar"
+                            src="https://shop.nemarkdigital.com/assets/images/avatars/le_hoang_phuc.png"
+                            alt="Hoàng Anh">
+                        <div class="review-meta">
+                            <span class="review-name">Hoàng Anh</span>
+                            <span class="review-job">CEO Startup công nghệ</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Mua YouTube Premium Family cho cả nhà, không quảng cáo xem sướng lắm. Shop
+                        rất nhiệt tình, giá tốt. Còn được tặng kèm Canva Pro, quá hời!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-top">
+                        <img class="review-avatar"
+                            src="https://shop.nemarkdigital.com/assets/images/avatars/pham_quynh_anh.png"
+                            alt="Phương Linh">
+                        <div class="review-meta">
+                            <span class="review-name">Phương Linh</span>
+                            <span class="review-job">Nghiên cứu sinh AI</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Lần đầu mua tài khoản online, hơi lo nhưng shop hỗ trợ rất tận tình qua
+                        Zalo. Gemini Pro chạy mượt, tích hợp ngay với Gmail và Drive. Quá tiện!"</p>
+                </div>
+
+
+                <div class="review-card">
+                    <div class="review-top">
+                        <img class="review-avatar"
+                            src="https://shop.nemarkdigital.com/assets/images/avatars/dang_minh_tuan.png"
+                            alt="Đăng Trọng">
+                        <div class="review-meta">
+                            <span class="review-name">Đăng Trọng</span>
+                            <span class="review-job">Freelance Designer</span>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Adobe Full Apps giá bằng 1/5 mua chính hãng, đầy đủ Photoshop, Premiere,
+                        After Effects. Shop giao tài khoản trong 2 phút, bảo hành xuyên suốt. Cực kỳ ổn!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="faq-inner">
+            <div class="faq-header">
+                <span class="reviews-eyebrow">CÂU HỎI THƯỜNG GẶP</span>
+
+                <h2 class="faq-title">Giải đáp thắc mắc</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-q"><span>Tôi mua rồi nhận tài khoản như thế nào?</span><span
+                            class="faq-arrow">▼</span></div>
+                    <div class="faq-a">Sau khi thanh toán, bạn sẽ nhận được thông tin tài khoản qua Zalo trong vòng 5–15
+                        phút. Với gói nâng cấp chính chủ, shop sẽ hướng dẫn từng bước chi tiết.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-q"><span>Bảo hành hoạt động như thế nào?</span><span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-a">Tất cả sản phẩm đều được bảo hành trọn thời gian sử dụng. Nếu tài khoản gặp lỗi,
+                        bạn chỉ cần nhắn Zalo cho shop để được đổi mới hoặc khắc phục miễn phí.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-q"><span>Có được hoàn tiền không?</span><span class="faq-arrow">▼</span></div>
+                    <div class="faq-a">Hoàn tiền 100% nếu shop không thể khắc phục lỗi tài khoản trong vòng 24 giờ kể từ
+                        khi bạn báo lỗi hợp lệ. Xem thêm tại mục Điều khoản & Dịch vụ.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-q"><span>Tài khoản dùng được bao lâu?</span><span class="faq-arrow">▼</span></div>
+                    <div class="faq-a">Tuỳ theo gói bạn chọn (1 tháng, 3 tháng, 6 tháng, 12 tháng…). Hết hạn bạn có thể
+                        gia hạn lại với giá ưu đãi cho khách cũ.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-q"><span>Tài khoản chính chủ khác gì cấp sẵn?</span><span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-a">Tài khoản chính chủ được nâng cấp trực tiếp trên email của bạn — bạn toàn quyền
+                        sử dụng, không chia sẻ. Cấp sẵn là tài khoản shop tạo sẵn, bạn đăng nhập để dùng.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-col">
+                <h4 class="footer-heading">SieuThiNick.Store</h4>
+                <p class="footer-desc">Shop bán tài khoản Premium uy tín #1 Việt Nam. Bảo hành trọn đời, hỗ trợ tận tình
+                    24/7.</p>
+                <div class="footer-social">
+                    <a href="https://zalo.me/0868192500" target="_blank" title="Zalo"
+                        class="social-link social-zalo">Zalo</a>
+                    <span class="social-link social-fb disabled" title="Sắp ra mắt">FB</span>
+                    <span class="social-link social-tt disabled" title="Sắp ra mắt">TikTok</span>
+                    <span class="social-link social-tg disabled" title="Sắp ra mắt">TG</span>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Liên kết</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showTerms(); return false;">Điều khoản dịch vụ</a></li>
+                    <li><a href="#" onclick="showTerms(); return false;">Chính sách bảo hành</a></li>
+                    <li><a href="#" onclick="showTerms(); return false;">Chính sách hoàn tiền</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Liên hệ</h4>
+                <ul class="footer-links">
+                    <li>Hotline: <a href="tel:0868192500">0868 192 500</a></li>
+                    <li>Zalo: <a href="https://zalo.me/0868192500" target="_blank">0868 192 500</a></li>
+                    <li>Hỗ trợ: 08:00 – 24:00</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-heading">Thanh toán</h4>
+                <div class="footer-payment">
+                    <span class="pay-badge">💳 Chuyển khoản</span>
+                    <span class="pay-badge">🏦 Momo</span>
+                    <span class="pay-badge">💰 VNPay</span>
+                    <span class="pay-badge">🏧 ZaloPay</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 SIEUTHINICK SHOP. All rights reserved.</span>
+            <a href="#" id="footerAdminLink" ondblclick="activateAdmin()" style="opacity:0.3;font-size:0.7rem">Admin</a>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Lên đầu trang">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6" />
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
