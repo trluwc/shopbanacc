@@ -65,13 +65,13 @@ const DEFAULT_PRODUCTS = [
             { text: 'Tài khoản Google PRO AI 2TB (Veo3) — Cấp Sẵn 1000–45000 Credit Flow', type: 'good' },
             { text: 'Veo3 Ultra không giới hạn + 45000 Credit tạo được 450 video Pro', type: 'good' },
             { text: 'Nâng cấp chính chủ: tặng kèm Gemini Pro + 2TB + Google Antigravity', type: 'good' },
-            { text: 'Bảo hành 7–14 ngày cho gói cấp sẵn', type: 'info' },
+            { text: 'Nhập SĐT để Admin liên hệ hỗ trợ — Nâng cấp CC vui lòng để lại Gmail', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', desc: 'Veo3 Ultra Không Giới Hạn + 45000 Credit Flow Labs (450 Video Pro) — Bảo hành 7 ngày', price: 247455, out: true },
-            { label: '1 Tháng', desc: 'Veo3 Ultra Không Giới Hạn + 45000 Credit Flow Labs (450 Video Pro) — Bảo hành 14 ngày', price: 315900, out: true },
-            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Credit/Tháng + Tặng kèm Gemini Pro + 2TB + Google Antigravity', price: 142155, out: false },
-            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Credit/Tháng + Tặng kèm Gemini Pro + 2TB + Google Antigravity', price: 221130, out: false },
+            { label: '1 Tháng', desc: 'Khoản Veo3 Pro Không Giới Hạn + 45000 Credit Flow Labs (Tạo Được 450 Video Pro) — Lưu Ý: Chỉ Bảo Hành 24 Giờ', price: 210600, out: false },
+            { label: '1 Tháng', desc: 'Khoản Veo3 Ultra Không Giới Hạn + 45000 Credit Flow Labs (Tạo Được 450 Video Pro) — Lưu Ý: Chỉ Bảo Hành 24 Giờ', price: 263250, out: false },
+            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Flow Labs Credit Mỗi Tháng + Tặng Kèm Gemini Pro + 2TB + Google Antigravity', price: 173745, out: false },
+            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Flow Labs Credit Mỗi Tháng + Tặng Kèm Gemini Pro + 2TB + Google Antigravity', price: 221130, out: false },
         ]
     },
     {
@@ -311,7 +311,7 @@ function init() {
 }
 
 function loadProducts() {
-    const DATA_VER = 'v20260301_2';
+    const DATA_VER = 'v20260306_1';
 
     const savedVer = localStorage.getItem('accshop_ver');
     const saved = localStorage.getItem('accshop_products');

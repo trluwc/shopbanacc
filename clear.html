@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Đang xoá cache...</h2>
+    <script>
+        localStorage.clear();
+        document.write('<h1 style="color:green">✅ Đã xoá cache! Đang chuyển hướng...</h1>');
+        setTimeout(function () { window.location.href = '/index.html'; }, 1000);
+    </script>
+</body>
+
+</html>
