@@ -19,11 +19,11 @@ const DEFAULT_PRODUCTS = [
             { text: 'Bảo hành toàn bộ thời gian sử dụng', type: 'info' },
         ],
         durations: [
-            { label: 'Nâng Cấp CC 1T (+Gemini+2TB)', price: 52650, out: true },
-            { label: 'Ultra Sẵn 1T (Bảo hành 14 ngày)', price: 289575, out: true },
-            { label: 'Nâng Cấp CC 6T (+Gemini+2TB)', price: 142155, out: false },
-            { label: 'Nâng Cấp CC 12T (+Gemini+2TB)', price: 221130, out: false },
-            { label: 'Chủ Nhóm 5 Slot 12T (+Gemini AI+2TB)', price: 631800, out: false },
+            { label: 'Nâng Cấp CC 1T (+Gemini+2TB)', price: 150000, out: true },
+            { label: 'Ultra Sẵn 1T (Bảo hành full)', price: 599000, out: false },
+            { label: 'Nâng Cấp CC 6T (+Gemini+2TB)', price: 300000, out: false },
+            { label: 'Nâng Cấp CC 12T (+Gemini+2TB)', price: 550000, out: false },
+            { label: 'Chủ Nhóm 5 Slot 12T (+Gemini AI+2TB)', price: 631800, out: true },
         ]
     },
     {
@@ -35,22 +35,14 @@ const DEFAULT_PRODUCTS = [
         badge: 'BEST SELLER',
         paused: false,
         features: [
-            { text: 'Vô hạn ChatGPT 5.2 Instant, ChatGPT 5.2 Thinking, ChatGPT 5.2 Pro', type: 'good' },
+            { text: 'Vô hạn ChatGPT 5.2 Instant, ChatGPT 5.5 Thinking, ChatGPT 5.5 Pro', type: 'good' },
             { text: 'Bảo hành toàn bộ thời gian sử dụng', type: 'good' },
             { text: 'Có 3 loại: Dùng Chung · Riêng Tư · Chính Chủ', type: 'info' },
             { text: 'Chính chủ: toàn quyền, không chia sẻ, bảo hành đổi mới', type: 'good' },
         ],
         durations: [
-            { label: '1 Tháng', desc: 'ChatGPT Plus Dùng Chung — Chỉ đăng nhập được 1 thiết bị', price: 89100, out: false },
-            { label: '12 Tháng', desc: 'ChatGPT Plus Dùng Chung — Chỉ đăng nhập được 1 thiết bị', price: 481140, out: false },
-            { label: '1 Tháng', desc: 'ChatGPT Plus Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 151470, out: false },
-            { label: '1 Tháng', desc: 'ChatGPT Plus Nâng Cấp Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 178200, out: false },
-            { label: '2 Tháng', desc: 'ChatGPT Plus Nâng Cấp Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 302940, out: true },
-            { label: '3 Tháng', desc: 'ChatGPT Plus Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 454410, out: false },
-            { label: '3 Tháng', desc: 'ChatGPT Plus Nâng Cấp Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 507870, out: false },
-            { label: '12 Tháng', desc: 'ChatGPT Go Có Sẵn Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 534600, out: false },
-            { label: '12 Tháng', desc: 'ChatGPT Plus Dùng Riêng Tư — Đăng nhập được 3-5 thiết bị', price: 1496880, out: false },
-            { label: '12 Tháng', desc: 'Nâng Cấp ChatGPT Plus Chính Chủ — Đăng nhập được 3-5 thiết bị', price: 1603800, out: true },
+
+            { label: '1 Tháng', desc: 'Nâng Cấp ChatGPT Plus Chính Chủ — Cấp acc riêng bảo hành fuill', price: 300000, out: false },
         ]
     },
     {
@@ -68,32 +60,32 @@ const DEFAULT_PRODUCTS = [
             { text: 'Nhập SĐT để Admin liên hệ hỗ trợ — Nâng cấp CC vui lòng để lại Gmail', type: 'info' },
         ],
         durations: [
-            { label: '1 Tháng', desc: 'Khoản Veo3 Pro Không Giới Hạn + 45000 Credit Flow Labs (Tạo Được 450 Video Pro) — Lưu Ý: Chỉ Bảo Hành 24 Giờ', price: 210600, out: false },
-            { label: '1 Tháng', desc: 'Khoản Veo3 Ultra Không Giới Hạn + 45000 Credit Flow Labs (Tạo Được 450 Video Pro) — Lưu Ý: Chỉ Bảo Hành 24 Giờ', price: 263250, out: false },
-            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Flow Labs Credit Mỗi Tháng + Tặng Kèm Gemini Pro + 2TB + Google Antigravity', price: 173745, out: false },
-            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Veo3 Pro 1000 Flow Labs Credit Mỗi Tháng + Tặng Kèm Gemini Pro + 2TB + Google Antigravity', price: 221130, out: false },
+            { label: '1 Tháng', desc: '5k credit-Nâng chính chủ dùng 1 tháng bảo hành fullk', price: 550000, out: false },
+            { label: '1 Tháng', desc: '25k credit nâng chính chủ  dùng 1 tháng bảo hành full', price: 1500000, out: false },
+            { label: '6 Tháng', desc: '12.5k credit nâng chính chủ  dùng 1 tháng bảo hành full', price: 950000, out: false },
+            { label: '12 Tháng', desc: 'Random 0-10k credit-Nâng chính chủ BHF', price: 550000, out: false },
         ]
     },
-    {
-        id: 'gemini-pro',
-        name: 'Gemini Pro Chính Chủ',
-        gradient: 'linear-gradient(135deg, #1e3a5f, #0c2340)',
-        labelColor: '#60a5fa',
-        image: './images/img-gemini.jpg',
-        paused: false,
-        features: [
-            { text: 'Gemini Ultra — model AI mạnh nhất của Google', type: 'good' },
-            { text: 'Google One 2TB cloud storage đi kèm', type: 'good' },
-            { text: 'Tích hợp Gmail, Docs, Sheets, Slides', type: 'good' },
-            { text: 'Tài khoản chính chủ không chia sẻ', type: 'info' },
-        ],
-        durations: [
-            { label: '6 Tháng', desc: 'Nâng Cấp Gemini Pro AI + Google One Drive 2TB + Google Antigravity Chính Chủ', price: 142155, out: false },
-            { label: '12 Tháng', desc: 'Nâng Cấp Gemini Pro AI + Google One Drive 2TB + Google Antigravity Chính Chủ', price: 221130, out: false },
-            { label: '12 Tháng', desc: 'Tài Khoản Chủ Nhóm + 5 Slot Gemini Pro AI + 2TB + Google Antigravity (6 Slot)', price: 631800, out: false },
+    // {
+    //     id: 'gemini-pro',
+    //     name: 'Gemini Pro Chính Chủ',
+    //     gradient: 'linear-gradient(135deg, #1e3a5f, #0c2340)',
+    //     labelColor: '#60a5fa',
+    //     image: './images/img-gemini.jpg',
+    //     paused: false,
+    //     features: [
+    //         { text: 'Gemini Ultra — model AI mạnh nhất của Google', type: 'good' },
+    //         { text: 'Google One 2TB cloud storage đi kèm', type: 'good' },
+    //         { text: 'Tích hợp Gmail, Docs, Sheets, Slides', type: 'good' },
+    //         { text: 'Tài khoản chính chủ không chia sẻ', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '6 Tháng', desc: 'Nâng Cấp Gemini Pro AI + Google One Drive 2TB + Google Antigravity Chính Chủ', price: 142155, out: false },
+    //         { label: '12 Tháng', desc: 'Nâng Cấp Gemini Pro AI + Google One Drive 2TB + Google Antigravity Chính Chủ', price: 221130, out: false },
+    //         { label: '12 Tháng', desc: 'Tài Khoản Chủ Nhóm + 5 Slot Gemini Pro AI + 2TB + Google Antigravity (6 Slot)', price: 631800, out: false },
 
-        ]
-    },
+    //     ]
+    // },
     {
         id: 'capcut-pro',
         name: 'Capcut Pro',
@@ -117,88 +109,88 @@ const DEFAULT_PRODUCTS = [
             { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Hạn 12 Tháng, Hàng Đổi Nhóm (Đăng nhập được 3-4 máy)', price: 633420, out: false },
         ]
     },
-    {
-        id: 'canva-pro',
-        name: 'Canva Pro Chính Chủ',
-        gradient: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
-        labelColor: '#ddd6fe',
-        image: './images/img-canva.jpg',
-        paused: false,
-        features: [
-            { text: '100+ triệu ảnh stock, element Premium', type: 'good' },
-            { text: 'Xóa nền AI, Magic Resize, Brand Kit', type: 'good' },
-            { text: 'Xuất file với tất cả định dạng', type: 'good' },
-            { text: 'Có gói Education & Full tính năng chính chủ', type: 'info' },
-        ],
-        durations: [
-            { label: '12 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 20160, out: false },
-            { label: '12 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 120960, out: false },
-            { label: '24 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 37632, out: false },
-            { label: '24 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 228480, out: false },
-            { label: '36 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 52416, out: false },
-            { label: '36 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 322560, out: false },
-        ]
-    },
-    {
-        id: 'youtube-premium',
-        name: 'Youtube Premium (Family)',
-        gradient: 'linear-gradient(135deg, #7f1d1d, #450a0a)',
-        labelColor: '#fca5a5',
-        image: './images/img-ytb.webp',
-        paused: false,
-        features: [
-            { text: 'Xem video không quảng cáo trên mọi thiết bị', type: 'good' },
-            { text: 'Phát nhạc nền khi tắt màn hình', type: 'good' },
-            { text: 'YouTube Music Premium đi kèm', type: 'good' },
-            { text: 'Gói Family + Tặng kèm Canva Pro Edu các gói dài hạn', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', desc: 'YouTube Premium Family — Không kèm Canva Pro Edu', price: 39150, out: false },
-            { label: '3 Tháng', desc: 'YouTube Premium Family — Không kèm Canva Pro Edu', price: 99833, out: false },
-            { label: '6 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 1 Năm', price: 187920, out: false },
-            { label: '12 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 1 Năm', price: 352350, out: false },
-            { label: '24 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 2 Năm', price: 610740, out: false },
-            { label: '36 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 3 Năm', price: 845640, out: false },
-        ]
-    },
-    {
-        id: 'netflix-4k',
-        name: 'Netflix Ultra 4K',
-        gradient: 'linear-gradient(135deg, #b91c1c, #1c1917)',
-        labelColor: '#fca5a5',
-        image: './images/img-netflix.jpg',
-        paused: false,
-        features: [
-            { text: '4K Ultra HD + HDR, Dolby Atmos', type: 'good' },
-            { text: 'Profile riêng + Pin riêng — không bị xâm phạm', type: 'good' },
-            { text: 'Tải phim xem offline', type: 'good' },
-            { text: 'Nhập số điện thoại để được hỗ trợ nhanh', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 99900, out: true },
-            { label: '3 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 314685, out: false },
-            { label: '6 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 611388, out: true },
-            { label: '12 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 1150000, out: false },
-        ]
-    },
-    {
-        id: 'spotify',
-        name: 'Spotify Premium',
-        gradient: 'linear-gradient(135deg, #14532d, #052e16)',
-        labelColor: '#4ade80',
-        image: './images/img-spotify.webp',
-        paused: false,
-        features: [
-            { text: 'Nghe nhạc không quảng cáo, không giới hạn', type: 'good' },
-            { text: 'Tải nhạc nghe offline', type: 'good' },
-            { text: 'Chất lượng âm thanh cao nhất', type: 'good' },
-            { text: 'Tài khoản cá nhân chính chủ giá rẻ', type: 'info' },
-        ],
-        durations: [
-            { label: '4 Tháng', desc: 'Tài Khoản Spotify Premium Cá Nhân — Chính chủ giá rẻ', price: 183600, out: false },
-            { label: '1 Năm', desc: 'Tài Khoản Spotify Premium Cá Nhân — Chính chủ giá rẻ', price: 499000, out: false },
-        ]
-    },
+    // {
+    //     id: 'canva-pro',
+    //     name: 'Canva Pro Chính Chủ',
+    //     gradient: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
+    //     labelColor: '#ddd6fe',
+    //     image: './images/img-canva.jpg',
+    //     paused: false,
+    //     features: [
+    //         { text: '100+ triệu ảnh stock, element Premium', type: 'good' },
+    //         { text: 'Xóa nền AI, Magic Resize, Brand Kit', type: 'good' },
+    //         { text: 'Xuất file với tất cả định dạng', type: 'good' },
+    //         { text: 'Có gói Education & Full tính năng chính chủ', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '12 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 20160, out: false },
+    //         { label: '12 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 120960, out: false },
+    //         { label: '24 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 37632, out: false },
+    //         { label: '24 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 228480, out: false },
+    //         { label: '36 Tháng', desc: 'Canva Education — Chính chủ đăng ký bằng mail của bạn', price: 52416, out: false },
+    //         { label: '36 Tháng', desc: 'Canva Pro Full Tính Năng — Toàn quyền, có Brand Kit, Upload font', price: 322560, out: false },
+    //     ]
+    // },
+    // {
+    //     id: 'youtube-premium',
+    //     name: 'Youtube Premium (Family)',
+    //     gradient: 'linear-gradient(135deg, #7f1d1d, #450a0a)',
+    //     labelColor: '#fca5a5',
+    //     image: './images/img-ytb.webp',
+    //     paused: false,
+    //     features: [
+    //         { text: 'Xem video không quảng cáo trên mọi thiết bị', type: 'good' },
+    //         { text: 'Phát nhạc nền khi tắt màn hình', type: 'good' },
+    //         { text: 'YouTube Music Premium đi kèm', type: 'good' },
+    //         { text: 'Gói Family + Tặng kèm Canva Pro Edu các gói dài hạn', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '1 Tháng', desc: 'YouTube Premium Family — Không kèm Canva Pro Edu', price: 39150, out: false },
+    //         { label: '3 Tháng', desc: 'YouTube Premium Family — Không kèm Canva Pro Edu', price: 99833, out: false },
+    //         { label: '6 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 1 Năm', price: 187920, out: false },
+    //         { label: '12 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 1 Năm', price: 352350, out: false },
+    //         { label: '24 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 2 Năm', price: 610740, out: false },
+    //         { label: '36 Tháng', desc: 'YouTube Premium Family + Tặng kèm Canva Pro Edu 3 Năm', price: 845640, out: false },
+    //     ]
+    // },
+    // {
+    //     id: 'netflix-4k',
+    //     name: 'Netflix Ultra 4K',
+    //     gradient: 'linear-gradient(135deg, #b91c1c, #1c1917)',
+    //     labelColor: '#fca5a5',
+    //     image: './images/img-netflix.jpg',
+    //     paused: false,
+    //     features: [
+    //         { text: '4K Ultra HD + HDR, Dolby Atmos', type: 'good' },
+    //         { text: 'Profile riêng + Pin riêng — không bị xâm phạm', type: 'good' },
+    //         { text: 'Tải phim xem offline', type: 'good' },
+    //         { text: 'Nhập số điện thoại để được hỗ trợ nhanh', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '1 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 99900, out: true },
+    //         { label: '3 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 314685, out: false },
+    //         { label: '6 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 611388, out: true },
+    //         { label: '12 Tháng', desc: 'Netflix Ultra 4K — Profile Riêng + Pin Riêng', price: 1150000, out: false },
+    //     ]
+    // },
+    // {
+    //     id: 'spotify',
+    //     name: 'Spotify Premium',
+    //     gradient: 'linear-gradient(135deg, #14532d, #052e16)',
+    //     labelColor: '#4ade80',
+    //     image: './images/img-spotify.webp',
+    //     paused: false,
+    //     features: [
+    //         { text: 'Nghe nhạc không quảng cáo, không giới hạn', type: 'good' },
+    //         { text: 'Tải nhạc nghe offline', type: 'good' },
+    //         { text: 'Chất lượng âm thanh cao nhất', type: 'good' },
+    //         { text: 'Tài khoản cá nhân chính chủ giá rẻ', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '4 Tháng', desc: 'Tài Khoản Spotify Premium Cá Nhân — Chính chủ giá rẻ', price: 183600, out: false },
+    //         { label: '1 Năm', desc: 'Tài Khoản Spotify Premium Cá Nhân — Chính chủ giá rẻ', price: 499000, out: false },
+    //     ]
+    // },
     {
         id: 'cursor-pro',
         name: 'Cursor Pro AI',
@@ -218,81 +210,64 @@ const DEFAULT_PRODUCTS = [
             { label: '1 Tháng', desc: 'Tài Khoản Cursor Pro Plus — Dùng Riêng', price: 1147500, out: true },
         ]
     },
-    {
-        id: 'ms365',
-        name: 'Microsoft Office 365',
-        gradient: 'linear-gradient(135deg, #1e3a5f, #0c2340)',
-        labelColor: '#93c5fd',
-        image: './images/img-ms365.webp',
-        paused: false,
-        features: [
-            { text: 'Word, Excel, PowerPoint, Outlook, Teams, Copilot AI', type: 'good' },
-            { text: 'OneDrive 1TB cloud storage', type: 'good' },
-            { text: 'Nâng cấp chính chủ tài khoản Microsoft của bạn', type: 'good' },
-            { text: 'Bản quyền chính hãng, luôn cập nhật', type: 'info' },
-        ],
-        durations: [
-            { label: '6 Tháng', desc: 'Nâng Cấp Chính Chủ Microsoft Office 365 Copilot + One Driver 1TB', price: 121500, out: false },
-            { label: '12 Tháng', desc: 'Nâng Cấp Chính Chủ Microsoft Office 365 Copilot + One Driver 1TB', price: 194400, out: false },
-        ]
-    },
-    {
-        id: 'adobe-full',
-        name: 'Adobe Full Apps',
-        gradient: 'linear-gradient(135deg, #7c2d12, #431407)',
-        labelColor: '#fb923c',
-        image: './images/img-adobe.webp',
-        paused: false,
-        features: [
-            { text: 'Photoshop, Illustrator, Premiere, After Effects', type: 'good' },
-            { text: 'Lightroom, InDesign, XD và 20+ app khác', type: 'good' },
-            { text: '100GB cloud storage', type: 'good' },
-            { text: 'Bản Creative Cloud chính hãng — Full 20+ Apps', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 60750, out: true },
-            { label: '4 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 243000, out: false },
-            { label: '12 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 729000, out: false },
-        ]
-    },
-    {
-        id: 'zoom-pro',
-        name: 'Zoom Pro',
-        gradient: 'linear-gradient(135deg, #1a56db, #0e3fad)',
-        labelColor: '#93c5fd',
-        image: './images/img-zoom.webp',
-        paused: false,
-        features: [
-            { text: 'Tài Khoản Zoom Pro Phòng Họp 100 Người', type: 'good' },
-            { text: 'Không giới hạn thời gian cuộc họp', type: 'good' },
-            { text: 'Ghi âm cloud, whiteboards, breakout rooms', type: 'good' },
-            { text: 'Giá rẻ, bảo hành toàn thời gian sử dụng', type: 'info' },
-        ],
-        durations: [
-            { label: '1 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 132300, out: false },
-            { label: '3 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 370000, out: false },
-            { label: '6 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 700000, out: false },
-            { label: '12 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 1300000, out: false },
-        ]
-    },
-    {
-        id: 'zalo-group-1000',
-        name: 'Nh\u00f3m Zalo 1000 Members',
-        gradient: 'linear-gradient(135deg, #0068FF, #004ecc)',
-        labelColor: '#ffffff',
-        image: 'https://thatim.vn/uploads/images/original/jH1-gjQ-HoK-nfC-26-09-2025-16.webp',
-        paused: true,
-        features: [
-            { text: 'Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 Th\u00e0nh Vi\u00ean Ch\u1edd X\u00e9t Duy\u1ec7t', type: 'good' },
-            { text: 'Nh\u00f3m th\u1eadt, th\u00e0nh vi\u00ean th\u1eadt \u2014 kh\u00f4ng bot', type: 'good' },
-            { text: 'Ph\u00f9 h\u1ee3p Marketing, kinh doanh online', type: 'good' },
-            { text: 'S\u1ea3n ph\u1ea9m \u0111ang t\u1ea1m ng\u01b0ng \u2014 li\u00ean h\u1ec7 \u0111\u1ec3 h\u1ecfi th\u00eam', type: 'warn' },
-        ],
-        durations: [
-            { label: '1 Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 TV', price: 189000, out: true },
-            { label: '5 Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 TV', price: 756000, out: true },
-        ]
-    },
+
+    // {
+    //     id: 'adobe-full',
+    //     name: 'Adobe Full Apps',
+    //     gradient: 'linear-gradient(135deg, #7c2d12, #431407)',
+    //     labelColor: '#fb923c',
+    //     image: './images/img-adobe.webp',
+    //     paused: false,
+    //     features: [
+    //         { text: 'Photoshop, Illustrator, Premiere, After Effects', type: 'good' },
+    //         { text: 'Lightroom, InDesign, XD và 20+ app khác', type: 'good' },
+    //         { text: '100GB cloud storage', type: 'good' },
+    //         { text: 'Bản Creative Cloud chính hãng — Full 20+ Apps', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '1 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 60750, out: true },
+    //         { label: '4 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 243000, out: false },
+    //         { label: '12 Tháng', desc: 'Tài Khoản Adobe Full 20+ Apps + 100GB Cloud Lưu Trữ', price: 729000, out: false },
+    //     ]
+    // },
+    // {
+    //     id: 'zoom-pro',
+    //     name: 'Zoom Pro',
+    //     gradient: 'linear-gradient(135deg, #1a56db, #0e3fad)',
+    //     labelColor: '#93c5fd',
+    //     image: './images/img-zoom.webp',
+    //     paused: false,
+    //     features: [
+    //         { text: 'Tài Khoản Zoom Pro Phòng Họp 100 Người', type: 'good' },
+    //         { text: 'Không giới hạn thời gian cuộc họp', type: 'good' },
+    //         { text: 'Ghi âm cloud, whiteboards, breakout rooms', type: 'good' },
+    //         { text: 'Giá rẻ, bảo hành toàn thời gian sử dụng', type: 'info' },
+    //     ],
+    //     durations: [
+    //         { label: '1 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 132300, out: false },
+    //         { label: '3 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 370000, out: false },
+    //         { label: '6 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 700000, out: false },
+    //         { label: '12 Tháng', desc: 'Tài Khoản Zoom Pro Phòng Họp 100 Người Giá Rẻ', price: 1300000, out: false },
+    //     ]
+    // },
+    // {
+    //     id: 'zalo-group-1000',
+    //     name: 'Nh\u00f3m Zalo 1000 Members',
+    //     gradient: 'linear-gradient(135deg, #0068FF, #004ecc)',
+    //     labelColor: '#ffffff',
+    //     image: 'https://thatim.vn/uploads/images/original/jH1-gjQ-HoK-nfC-26-09-2025-16.webp',
+    //     paused: true,
+    //     features: [
+    //         { text: 'Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 Th\u00e0nh Vi\u00ean Ch\u1edd X\u00e9t Duy\u1ec7t', type: 'good' },
+    //         { text: 'Nh\u00f3m th\u1eadt, th\u00e0nh vi\u00ean th\u1eadt \u2014 kh\u00f4ng bot', type: 'good' },
+    //         { text: 'Ph\u00f9 h\u1ee3p Marketing, kinh doanh online', type: 'good' },
+    //         { text: 'S\u1ea3n ph\u1ea9m \u0111ang t\u1ea1m ng\u01b0ng \u2014 li\u00ean h\u1ec7 \u0111\u1ec3 h\u1ecfi th\u00eam', type: 'warn' },
+    //     ],
+    //     durations: [
+    //         { label: '1 Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 TV', price: 189000, out: true },
+    //         { label: '5 Nh\u00f3m Zalo V\u0129nh Vi\u1ec5n 1000-1200 TV', price: 756000, out: true },
+    //     ]
+    // },
 ];
 
 // ─── STATE ───
